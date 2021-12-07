@@ -194,6 +194,8 @@ preencherNomeTurno2(alunoJoao2)
 // ********************************************
 
 
+
+
 const filme1 = {
     nome: "Matrix",
     genero: "Fantasia",
@@ -238,8 +240,19 @@ perguntarFilme()
 
 let assistir = prompt("Voces irao assistir um destes filmes ?")
 assistir = assistir.toLowerCase().trim().replace(" ", "")
+
 if (assistir == "sim") {
+
+    let perg = prompt("Vao comprar algo para comer ?")
+    if (perg == "sim") {
+        let comida = prompt("Oque sera")
+        alert(`Aproveite sua ${comida}`)
+
+    }
     alert("Otimo filme")
-} else {
+
+}
+
+else {
     alert("Escolha outro filme :(")
 }
