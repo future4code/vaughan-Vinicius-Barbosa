@@ -173,8 +173,7 @@ function mostrarPrimeiroUltimo(caixa) {
 
    let ultimo = caixa.pop()
    let primeiro = caixa[0]
-   array = [primeiro, ultimo]
-   return console.log(array)
+   return console.log(`O maior número é ${ultimo} e o menor é ${primeiro}`)
 }
 
 mostrarPrimeiroUltimo(original5)
