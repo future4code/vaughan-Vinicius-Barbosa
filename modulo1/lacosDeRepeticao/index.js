@@ -129,7 +129,22 @@ function mostrarContEDividir() {
 mostrarContEDividir()
 
 
-// C -
+// C - 
+
+const original4 = [11, 22, 33, 44, 55, 66, 77]
+
+
+function mostrarDiv() {
+
+    let arrayPares = 0
+    console.log(`Os itens da lista sao`)
+    for (arrayPares of original4) {
+        if (arrayPares % 2 === 0)
+            console.log(arrayPares)
+    }
+}
+
+mostrarDiv()
 
 
 
