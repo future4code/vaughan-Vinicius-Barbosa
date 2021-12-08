@@ -164,3 +164,18 @@ function mostrarFrase() {
 }
 mostrarFrase()
 
+//E -
+
+const original5 = [11, 22, 33, 44, 55, 66, 77]
+
+
+function mostrarPrimeiroUltimo(caixa) {
+
+   let ultimo = caixa.pop()
+   let primeiro = caixa[0]
+   array = [primeiro, ultimo]
+   return console.log(array)
+}
+
+mostrarPrimeiroUltimo(original5)
+
