@@ -166,15 +166,29 @@ mostrarFrase()
 
 //E -
 
-const original5 = [11, 22, 33, 44, 55, 66, 77]
+const original5 = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
+function devolverMaior(array) {
+   let maiorNumero = 0;
+   for(let num of array) {
+      if(maiorNumero < num){
+          maiorNumero = num
+      }
 
-function mostrarPrimeiroUltimo(caixa) {
-
-   let ultimo = caixa.pop()
-   let primeiro = caixa[0]
-   return console.log(`O maior número é ${ultimo} e o menor é ${primeiro}`)
+   }  
+   return maiorNumero
 }
 
-mostrarPrimeiroUltimo(original5)
+function devolverMenor(array) {
+   let menorNumero = array[0];
+   for(let num of array) {
+      if(menorNumero > num){
+          menorNumero = num
+      }
+
+   }  
+   return menorNumero
+}
+
+console.log(`O maior numero e ${devolverMaior(original5)} o menor numero e ${devolverMenor(original5)}`)
 
