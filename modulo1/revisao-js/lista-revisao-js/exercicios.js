@@ -77,22 +77,47 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    let esca = "Escaleno"
+    let equi = "Equilátero"
+    let iso = "Isósceles"
+    if (ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC) {
+        return esca
+    } else if (ladoA === ladoB && ladoA === ladoC){
+        return equi
+    } else if (ladoA === ladoB && ladoA !== ladoC){
+        return iso
+    } else if (ladoA === ladoC && ladoA !== ladoB){
+        return iso
+    } else if (ladoA !== ladoB && ladoB === ladoC){
+        return iso
+    }
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
-}
+    let elMaximo = array.sort(function(a, b){return b - a;}) [1];
+    let lista = array.sort(function(a, b){return b - a;})
+    let menor = lista[lista.length -2]
+    array1 = [elMaximo, menor]
+    
+    return array1
+}  
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
-}
+    filme = {
+        nome: 'O Diabo Veste Prada',
+        ano: 2006,
+        diretor: 'David Frankel',
+        atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+     }
+     return `Venha assistir ao filme ${filme.nome}, de 2006, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+}   
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+
+    return 
 }
 
 // EXERCÍCIO 13A
