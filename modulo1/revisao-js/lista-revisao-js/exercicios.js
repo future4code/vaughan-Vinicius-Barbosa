@@ -116,18 +116,20 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-
-    return 
+ const objetoEspa = {...pessoa, nome:"ANÔNIMO"}
+    return objetoEspa
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    const resul2 = pessoas.filter((nome) => nome.idade > 14 && nome.idade <=69 && nome.altura >= 1.5 )
+    return resul2
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    const resul2 = pessoas.filter((nome) => nome.idade <= 69 && nome.altura <= 1.8 )
+    return resul2
 }
 
 // EXERCÍCIO 14
