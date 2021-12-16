@@ -53,12 +53,6 @@ div img {
     font-size: 20px;
     color: white;
 }
-/* Posicao */
-.botao-amarelo {
-    top: 120%;
-    left: 41%;
-
-}
 
 .container-frase-inicial {
     text-align: center;
@@ -89,6 +83,19 @@ div img {
   *  ESTILOS HOME 
   *
   **/
+
+.frase-exercicio4 {
+    padding: 12px ;
+    text-align: center;
+}
+.frase-exercicio4 ol {
+    padding: 0x;
+    width: 200px;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 558px;
+}
+
 
 #container-de-descricao {
     background-color: #2274a5;
