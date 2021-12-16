@@ -1,0 +1,139 @@
+
+
+/* Pagina inicial 
+ */
+
+
+ 
+.corpo-index {
+    background-image:url(bread.jpg);
+    background-size: 100%;
+}
+
+.titulo-index {
+    text-align: center;
+}
+
+.links-index {
+    text-align: center;
+    border: rgb(31, 30, 30) 3px solid;
+    padding: 10px 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 50px;
+}
+
+.desc-index {
+    text-align: center;
+}
+
+.redes-index {
+    text-align: center;
+}
+/* 
+Controle de estoque
+ */
+
+
+
+.titulo-controle {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 2000;
+}
+
+.link-estoque {
+    text-align: center;
+    border: rgb(31, 30, 30) 3px solid;
+    padding: 25px 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 50px;
+}
+
+
+
+
+
+.tabela-estoque {
+    text-align: center;
+    
+}
+
+.corpo-controle{
+    background-image:url(bread.jpg);
+    background-size: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+}
+
+/* 
+Adicionar produtos
+*/
+
+.paginaaddpro {
+    background-image:url(bread.jpg);
+    background-size: 100%;
+}
+
+.titulo-addpro {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 1000;
+}
+
+.link-addpro {
+    text-align: center;
+    border: rgb(31, 30, 30) 3px solid;
+    padding: 25px 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 50px;
+}
+
+
+.entradasaddpro {
+    text-align: center;
+}
+
+.addpro {
+    text-align: center;
+}
+
+
+
+/* 
+Pagina de funcionarios
+*/
+
+
+
+.pag-funcionarios {
+    background-image:url(bread.jpg);
+    background-size: 100%;
+}
+
+.titulo-funcionarios {
+    font-size: 25px;
+    text-align: center;
+}
+
+
+.link-pagina-funcionarios {
+    text-align: center;
+    border: rgb(31, 30, 30) 3px solid;
+    padding: 25px 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 50px;
+}
+
+
+.funcionarios-lista {
+    margin-left: 150px;
+}
+
+.lista-tabela {
+    margin-left: 150px;
+}
