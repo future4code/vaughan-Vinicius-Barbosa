@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+.container p {
+    text-align: center;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -37,6 +41,10 @@ div img {
     background: black;
 }
 
+.div-do-botao {
+    padding-top:10%;
+}
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -47,17 +55,20 @@ div img {
 }
 /* Posicao */
 .botao-amarelo {
-    position:relative;
-    top: 10%;
-    left: -12%;
+    top: 120%;
+    left: 41%;
+
 }
 
-
-.container p {
-    margin-right: -250px;
-    margin-left: 50px;
+.container-frase-inicial {
+    text-align: center;
+    padding-top:10%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
+#container-de-descricao {
+    text-align: center;
+}
 
 .botao-amarelo:hover {
     background-color: #c44f00;
@@ -96,6 +107,7 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    text-align: center;
 }
 
 
