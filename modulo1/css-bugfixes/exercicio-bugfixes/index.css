@@ -37,10 +37,6 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
-
 .div-do-botao {
     padding-top:10%;
 }
@@ -92,8 +88,8 @@ div img {
     padding: 0x;
     width: 200px;
     text-align: center;
-    margin-right: 20px;
-    margin-left: 558px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -163,4 +159,11 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+
+.tabela-de-produtos {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
