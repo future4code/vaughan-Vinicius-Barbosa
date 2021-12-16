@@ -45,6 +45,19 @@ div img {
     font-size: 20px;
     color: white;
 }
+/* Posicao */
+.botao-amarelo {
+    position:relative;
+    top: 10%;
+    left: -12%;
+}
+
+
+.container p {
+    margin-right: -250px;
+    margin-left: 50px;
+}
+
 
 .botao-amarelo:hover {
     background-color: #c44f00;
@@ -123,7 +136,11 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+
 }
+
+
+
 
 #back-button:hover {
     background-color: #635a3d
