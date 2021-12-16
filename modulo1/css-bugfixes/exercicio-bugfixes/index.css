@@ -63,6 +63,11 @@ div>p:first-child {
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
+.botao-amarelo:active {
+    background-color: rgb(59, 39, 39);
+    color: rgb(255, 255, 255);
+}
+
 
 .container {
     height: 500px;
@@ -72,7 +77,6 @@ div>p:first-child {
 .icone {
     height: 20px;
 }
-
 
 /** 
   *
@@ -143,27 +147,38 @@ td button {
 }
 
 
-#back-button {
-    background-color: white;
-    width: 100px;
-    height: 20px;
-    border: 1px solid black;
+.botao-produtos {
+    background-color: #ffaf43;
+    width: 170px;
+    height: 30px;
     border-radius: 5px;
     font-size: 10px;
-    color: black;
-
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-
-
-
-#back-button:hover {
-    background-color: #635a3d
+.botao-produtos:active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(238, 234, 234);
 }
+
+.botao-produtos:hover {
+    background-color: rgb(78, 48, 10);
+    color: white;
+}
+
 
 
 .tabela-de-produtos {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.movimentar-botao {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 9%;
 }
