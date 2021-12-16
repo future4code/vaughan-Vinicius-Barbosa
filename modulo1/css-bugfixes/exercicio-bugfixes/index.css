@@ -29,8 +29,8 @@ button:focus {
     color: white;
 }
 
-img {
-    width: 100px;
+.produto{
+    width: 60px;
 }
 
 div>p:first-child {
