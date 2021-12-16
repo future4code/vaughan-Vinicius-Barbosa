@@ -129,7 +129,22 @@ function mostrarContEDividir() {
 mostrarContEDividir()
 
 
-// C -
+// C - 
+
+const original4 = [11, 22, 33, 44, 55, 66, 77]
+
+
+function mostrarDiv() {
+
+    let arrayPares = 0
+    console.log(`Os itens da lista sao`)
+    for (arrayPares of original4) {
+        if (arrayPares % 2 === 0)
+            console.log(arrayPares)
+    }
+}
+
+mostrarDiv()
 
 
 
@@ -148,4 +163,32 @@ function mostrarFrase() {
     }
 }
 mostrarFrase()
+
+//E -
+
+const original5 = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+
+function devolverMaior(array) {
+   let maiorNumero = 0;
+   for(let num of array) {
+      if(maiorNumero < num){
+          maiorNumero = num
+      }
+
+   }  
+   return maiorNumero
+}
+
+function devolverMenor(array) {
+   let menorNumero = array[0];
+   for(let num of array) {
+      if(menorNumero > num){
+          menorNumero = num
+      }
+
+   }  
+   return menorNumero
+}
+
+console.log(`O maior numero e ${devolverMaior(original5)} o menor numero e ${devolverMenor(original5)}`)
 
