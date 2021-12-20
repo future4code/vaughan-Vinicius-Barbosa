@@ -1,0 +1,251 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.corpo-index {
+    background-image:url(fundo.jpg);
+    background-size: 150%;
+}
+
+
+@font-face {
+	font-family: 'fonte';
+	src: url('Dream\ MMA.ttf') format('opentype'),
+		url('Dream\ MMA.ttf') format('truetype')	;
+} 
+@font-face {
+	font-family: 'komoda';
+	src: url('Mohave.otf') format('opentype'),
+		url('Mohave.otf') format('truetype')	;
+} 
+
+
+.minha-imagem {
+    box-shadow: 0px 6px 6px gray;
+    bottom: 0;
+    margin-top: 0%;
+    width: 100%;
+    padding: 25px 25px;
+    height: 40px;
+    background-color: rgba(65, 78, 95, 0.602);
+    color: rgba(0, 0, 0, 0.863);
+    font-family:'komoda';
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.formulario {
+    text-align: center;
+    
+}
+.botoes {
+    text-align: center;
+}
+
+
+.foto-desenho {
+    text-align: center;
+    border: 1px solid rgba(98, 88, 88, 0);
+    width: 400px;
+    height: 400px;
+    margin-left: 50%;
+    margin-top: -4%;
+
+}
+
+.imagem-em-si {
+    width: 200px;
+}
+
+.icones-redes {
+    text-align: center;
+    margin-top: -40px;
+
+}
+.icone-git {
+    padding: 10px;
+}
+.icone-mail { 
+    padding: 10px;
+}
+.icone-face {
+    padding: 10px;
+}
+.icone-linke {
+    padding: 10px;
+}
+
+.descriçao-horadodia {
+    font-family:'Komoda';
+    font-weight: bold;
+    font-size: 100%
+}
+.descriçao-black {
+    font-family:'Komoda';
+    font-weight: bold;
+    font-size: 100%
+}
+
+.minha-descricao {
+    position:sticky;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-top: 0%;
+    width: 80%;
+    padding: 25px;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 150%;
+    font-family:'Komoda';
+    display: block;
+}
+
+.frase-motivacional {
+    border: 0.1px solid rgba(255, 255, 255, 0);
+    margin-right: 50px;
+    margin-left: 400px;
+    margin-top: 1%;
+}
+
+
+.titulo-inst {
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 20px;
+    margin-top: 10%;
+    font-family:'Komoda';
+    font-weight: bold;
+    display: block;
+    font-size: 150%
+}
+
+.escolas {
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 1%;    
+    font-family:'Komoda';
+    font-weight: bold;
+    font-size: 150%
+}
+
+.titulo-trabalho {
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 20px;
+    font-family:'Komoda';
+    font-weight: bold;
+    font-size: 150%
+}
+
+.empresas {
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 20px;
+    font-family:'Komoda';
+    font-weight: bold;
+    font-size: 150%
+}
+
+
+
+footer {
+    box-shadow: 0px -6px 6px gray;
+    bottom: 0;
+    margin-top: 30%;
+    width: 100%;
+    padding: 12px;
+    height: 100px;
+    background-color: rgba(65, 78, 95, 0.602);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+  
+.botao-inicial{
+    font-size: 10px;
+}
+
+.botao-projetos{
+    font-size: 10px;
+}
+
+.botao-inicial {
+    background: #3D94F6;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #1E62D0);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 20px 0 #000000;
+    -moz-box-shadow: 0px 1px 20px 0 #000000;
+    box-shadow: 0px 1px 20px 0 #000000;
+    text-shadow: 0px 1px 20px #000000;
+    border: solid #337FED 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .botao-inicial:hover {
+    border: solid #337FED 1px;
+    background: #1E62D0;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #3D94F6);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+ }
+
+ .botao-projetos {
+    background: #3D94F6;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #1E62D0);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 20px 0 #000000;
+    -moz-box-shadow: 0px 1px 20px 0 #000000;
+    box-shadow: 0px 1px 20px 0 #000000;
+    text-shadow: 0px 1px 20px #000000;
+    border: solid #337FED 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .botao-projetos:hover {
+    border: solid #337FED 1px;
+    background: #1E62D0;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #3D94F6);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+ }
