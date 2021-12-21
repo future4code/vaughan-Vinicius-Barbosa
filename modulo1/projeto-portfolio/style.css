@@ -5,15 +5,15 @@
 }
 
 .corpo-index {
-    background-image:url(fundo.jpg);
+    background-image:url();
     background-size: 150%;
 }
 
 
 @font-face {
 	font-family: 'fonte';
-	src: url('Dream\ MMA.ttf') format('opentype'),
-		url('Dream\ MMA.ttf') format('truetype')	;
+	src: url('../projeto-portfolio/Bulgaria\ Moderna\ Pro.otf') format('opentype'),
+		url('../projeto-portfolio/Bulgaria\ Moderna\ Pro.otf') format('truetype')	;
 } 
 @font-face {
 	font-family: 'komoda';
@@ -23,19 +23,55 @@
 
 
 .minha-imagem {
-    box-shadow: 0px 6px 6px gray;
-    bottom: 0;
-    margin-top: 0%;
+    box-shadow: 0px 30px 30px rgb(202, 202, 202);
+    margin-top: -10%;
     width: 100%;
-    padding: 25px 25px;
-    height: 40px;
-    background-color: rgba(65, 78, 95, 0.602);
-    color: rgba(0, 0, 0, 0.863);
-    font-family:'komoda';
+    padding: 20px 10px;
+    background-color: rgb(192, 204, 224);   
+    color: rgb(0, 0, 0);
+    font-family:'fonte';
     text-align: center;
-    font-size: 20px;
-
+    font-size: 25px;
+    height: 50px;
+    font-style: italic;
+    font-weight: initial;
+    position: fixed;
 }
+
+.minha-imagem a {
+    color: rgb(131, 131, 131);
+    font-weight: initial;
+    text-decoration: none;
+    text-shadow: 15px 10px 10px rgb(93, 93, 93);
+}
+
+.link {
+    margin-left: 0%;
+    width: 25%;
+    height: 50px;
+}
+
+.minha-imagem h1 {
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: auto;
+}
+
+
+
+.competencias {
+    border: 1px solid rgb(29, 29, 29);
+    text-align: center;
+}
+
+.minha-imagem h1 {
+    text-shadow: 15px 10px 30px rgb(110, 110, 110);
+    box-shadow: 1px solid rgb(24, 24, 24);
+}
+
+
+
 
 .formulario {
     text-align: center;
@@ -79,85 +115,96 @@
 }
 
 .descriçao-horadodia {
-    font-family:'Komoda';
+    font-family:'fonte';
     font-weight: bold;
     font-size: 100%
 }
 .descriçao-black {
-    font-family:'Komoda';
+    font-family:'fonte';
     font-weight: bold;
     font-size: 100%
 }
 
 .minha-descricao {
-    position:sticky;
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0);
-    margin-top: 0%;
+    border: 1px solid rgb(78, 78, 78);
+    margin-top: 10%;
     width: 80%;
     padding: 25px;
     height: 100px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 150%;
-    font-family:'Komoda';
+    color: rgb(116, 116, 116);
+    font-size: 140%;
+    font-family:'fonte';
     display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: initial;
 }
 
 .frase-motivacional {
-    border: 0.1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgb(78, 78, 78);
     margin-right: 50px;
     margin-left: 400px;
     margin-top: 1%;
+    color: rgb(116, 116, 116);
+
 }
 
 
 .titulo-inst {
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgb(78, 78, 78);
     margin-left: 20px;
     margin-top: 10%;
-    font-family:'Komoda';
-    font-weight: bold;
+    font-family:'fonte';
     display: block;
-    font-size: 150%
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
 }
 
 .escolas {
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgb(78, 78, 78);
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 1%;    
-    font-family:'Komoda';
-    font-weight: bold;
-    font-size: 150%
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
 }
 
 .titulo-trabalho {
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgb(78, 78, 78);
     margin-left: 20px;
-    font-family:'Komoda';
-    font-weight: bold;
-    font-size: 150%
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
 }
 
 .empresas {
     border: 1px solid rgba(255, 255, 255, 0);
     margin-left: 20px;
-    font-family:'Komoda';
-    font-weight: bold;
-    font-size: 150%
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
 }
 
 
 
 footer {
-    box-shadow: 0px -6px 6px gray;
+    box-shadow: 0px -20px 30px rgb(202, 202, 202);
     bottom: 0;
     margin-top: 30%;
     width: 100%;
     padding: 12px;
     height: 100px;
-    background-color: rgba(65, 78, 95, 0.602);
+    background-color: rgb(192, 204, 224);
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -171,12 +218,12 @@ footer {
 }
 
 .botao-inicial {
-    background: #3D94F6;
-    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #1E62D0);
+    background: #91a1b3;
+    background-image: -webkit-linear-gradient(top, rgba(122, 147, 182, 0.602), #7794c3);
+    background-image: -moz-linear-gradient(top, rgba(102, 125, 155, 0.602), #7d94b8);
+    background-image: -ms-linear-gradient(top, rgba(113, 135, 163, 0.602), #7b8fb1);
+    background-image: -o-linear-gradient(top, rgba(124, 146, 175, 0.602), #8395b3);
+    background-image: -webkit-gradient(to bottom, rgba(125, 146, 173, 0.602), #7187aa);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 5px;
@@ -185,10 +232,10 @@ footer {
     font-size: 10px;
     font-weight: 100;
     padding: 10px;
-    -webkit-box-shadow: 0px 1px 20px 0 #000000;
-    -moz-box-shadow: 0px 1px 20px 0 #000000;
-    box-shadow: 0px 1px 20px 0 #000000;
-    text-shadow: 0px 1px 20px #000000;
+    -webkit-box-shadow: 0px 1px 20px 0 #a3a3a3;
+    -moz-box-shadow: 0px 1px 20px 0 #8d8d8d;
+    box-shadow: 0px 10px 10px rgb(173, 173, 173);
+    text-shadow: 0px 1px 20px #808080;
     border: solid #337FED 1px;
     text-decoration: none;
     display: inline-block;
@@ -197,13 +244,13 @@ footer {
  }
  
  .botao-inicial:hover {
-    border: solid #337FED 1px;
-    background: #1E62D0;
-    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #3D94F6);
+    border: solid #b5d4ff 1px;
+    background: #b6d2ff;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #add3ff);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #a7d0ff);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #a1caf8);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #aad2ff);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #add1fa);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -212,11 +259,11 @@ footer {
 
  .botao-projetos {
     background: #3D94F6;
-    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #1E62D0);
-    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #1E62D0);
+    background-image: -webkit-linear-gradient(top, rgba(122, 147, 182, 0.602), #7794c3);
+    background-image: -moz-linear-gradient(top, rgba(102, 125, 155, 0.602), #7d94b8);
+    background-image: -ms-linear-gradient(top, rgba(113, 135, 163, 0.602), #7b8fb1);
+    background-image: -o-linear-gradient(top, rgba(124, 146, 175, 0.602), #8395b3);
+    background-image: -webkit-gradient(to bottom, rgba(125, 146, 173, 0.602), #7187aa);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 5px;
@@ -227,7 +274,7 @@ footer {
     padding: 10px;
     -webkit-box-shadow: 0px 1px 20px 0 #000000;
     -moz-box-shadow: 0px 1px 20px 0 #000000;
-    box-shadow: 0px 1px 20px 0 #000000;
+    box-shadow: 0px 10px 10px rgb(173, 173, 173);
     text-shadow: 0px 1px 20px #000000;
     border: solid #337FED 1px;
     text-decoration: none;
@@ -237,15 +284,42 @@ footer {
  }
  
  .botao-projetos:hover {
-    border: solid #337FED 1px;
-    background: #1E62D0;
-    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #3D94F6);
-    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #3D94F6);
+    border: solid #b5d4ff 1px;
+    background: #b6d2ff;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #add3ff);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #a7d0ff);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #a1caf8);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #aad2ff);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #add1fa);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     text-decoration: none;
  }
+
+
+ .input-nome {
+    border: 0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+    margin-right: 50px;
+    width: 200px;
+}
+
+ 
+
+ .input-email {
+    border:0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+    margin-left: 50px;
+    width: 200px;
+}
+ 
+
+ .text-area {
+    border:0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+ }
+ 
