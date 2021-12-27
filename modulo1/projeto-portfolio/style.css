@@ -12,8 +12,8 @@
 
 @font-face {
 	font-family: 'fonte';
-	src: url('../projeto-portfolio/Bulgaria\ Moderna\ Pro.otf') format('opentype'),
-		url('../projeto-portfolio/Bulgaria\ Moderna\ Pro.otf') format('truetype')	;
+	src: url('Bulgaria\ Moderna\ Pro.otf') format('opentype'),
+		url('Bulgaria\ Moderna\ Pro.otf') format('truetype')	;
 } 
 @font-face {
 	font-family: 'komoda';
@@ -464,7 +464,7 @@ footer {
  .desenvolvido {
     border: 1px solid rgba(58, 58, 58, 0);
     width: 300px;
-    margin-left: 1200px;
+    margin-left: 1000px;
     margin-top: 0px;
     font-family:'fonte';
     font-size: 20px
