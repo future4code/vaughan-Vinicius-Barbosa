@@ -95,10 +95,10 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-    let elMaximo = array.sort(function(a, b){return b - a;}) [1];
+    let maximo = array.sort(function(a, b){return b - a;}) [1];
     let lista = array.sort(function(a, b){return b - a;})
     let menor = lista[lista.length -2]
-    array1 = [elMaximo, menor]
+    array1 = [maximo, menor]
     
     return array1
 }  
@@ -146,8 +146,16 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    const novoArray = consultas.sort((a, b) => {
+        if (a.nome < b.nome)
+            return - 1;
+        if (a.nome > b.nome)
+            return + 1;
+        return 0
+    })
+    return novoArray
 }
+
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
