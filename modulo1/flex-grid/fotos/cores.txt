@@ -1,0 +1,3 @@
+- Rosa escuro: `mediumvioletred`
+- Rosa claro: `#f2d0e0`
+- Sombra do card: `darkgray`

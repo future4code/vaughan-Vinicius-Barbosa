@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pagina-toda {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+.esquerda {
+    height: 80vh;
+    display: flex;
+    border: rgb(31, 30, 30) 3px solid;
+
+
+}
+
+.container-bolo {
+    display: flex;
+    margin-left: auto;
+    padding: 10px;
+
+}
+
+
+
+
+
+.utilizar-grid {
+    border: rgb(31, 30, 30) 3px solid;
+}
+
+
+
+header {
+    height: 100px;
+    background-color: mediumvioletred;
+    display:flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    align-items: center;
+}
+
+.botao {
+    width: 100px;
+}
+
+main {
+    background-color: #f2d0e0;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: mediumvioletred;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
