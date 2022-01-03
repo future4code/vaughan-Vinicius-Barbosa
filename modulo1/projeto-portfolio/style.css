@@ -1,0 +1,471 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.corpo-index {
+    background-image:url();
+    background-size: 150%;
+}
+
+
+@font-face {
+	font-family: 'fonte';
+	src: url('Bulgaria\ Moderna\ Pro.otf') format('opentype'),
+		url('Bulgaria\ Moderna\ Pro.otf') format('truetype')	;
+} 
+@font-face {
+	font-family: 'komoda';
+	src: url('Mohave.otf') format('opentype'),
+		url('Mohave.otf') format('truetype')	;
+} 
+
+
+.minha-imagem {
+    box-shadow: 0px 30px 30px rgb(202, 202, 202);
+    margin-top: -10%;
+    width: 100%;
+    padding: 20px 10px;
+    background-color: rgb(192, 204, 224);   
+    color: rgb(0, 0, 0);
+    font-family:'fonte';
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+    font-style: italic;
+    font-weight: initial;
+    position: fixed;
+}
+
+.minha-imagem a {
+    color: rgb(63, 63, 63);
+    font-weight: initial;
+    text-decoration: none;
+    text-shadow: 15px 10px 10px rgb(93, 93, 93);
+}
+
+.link {
+    margin-left: 0%;
+    width: 25%;
+    height: 50px;
+}
+
+.minha-imagem h1 {
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: auto;
+}
+
+
+
+.competencias {
+    border: 1px solid rgba(29, 29, 29, 0);
+    margin-left: 40px ;
+}
+
+.minha-imagem h1 {
+    text-shadow: 15px 10px 30px rgb(110, 110, 110);
+    box-shadow: 1px solid rgb(24, 24, 24);
+}
+
+
+.formulario-todo {
+    border: 1px solid rgba(77, 77, 77, 0);
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+}
+
+.area-box-pagina {
+    border: 0px solid rgba(63, 63, 63, 0);
+    height: 450px;
+    display:flex;
+}
+
+.caixa1 {
+    border: 1px solid rgba(63, 63, 63, 0);
+    width: 400px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-left: 150px;
+    margin-top: 0px;
+    border-radius: 5    px;
+    box-shadow: 30px 12px 70px gray;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
+    font-style: italic;
+}
+
+.caixa2 {
+    border: 1px solid rgba(47, 47, 47, 0);
+    width: 400px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-left: 300px;
+    margin-top: 0px;
+    border-radius: 5px;
+    box-shadow: 30px 12px 70px gray;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
+    font-style: italic;
+}
+
+.caixa1 img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid rgb(63, 63, 63);
+    margin-top: 55px;
+}
+
+
+.caixa2 img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid rgb(63, 63, 63);
+    margin-top: 30px
+}
+
+.caixa1 h4 {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 80px;
+    color: rgb(49, 49, 49);
+    font-family:'fonte';
+
+}
+.caixa2 h4 {   
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 80px;
+    color: rgb(49, 49, 49);
+    font-family:'fonte';
+    font-size: 20px;
+}
+
+
+
+
+.formulario {
+    text-align: center;
+    border: 1px solid rgba(98, 88, 88, 0);
+    margin-bottom: 80px;
+    margin: 10px;
+}
+.botoes {
+    text-align: center;
+}
+
+
+.foto-desenho {
+    text-align: center;
+    border: 1px solid rgba(98, 88, 88, 0);
+    width: 400px;
+    height: 400px;
+    margin-left: 50%;
+    margin-top: -4%;
+
+}
+
+.imagem-em-si {
+    width: 200px;
+}
+
+.icones-redes {
+    text-align: center;
+    margin-top: -40px;
+
+}
+.icone-git {
+    padding: 10px;
+}
+.icone-mail { 
+    padding: 10px;
+}
+.icone-face {
+    padding: 10px;
+}
+.icone-linke {
+    padding: 10px;
+}
+
+.descriçao-horadodia {
+    font-family:'fonte';
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 80px;
+}
+.descriçao-black {
+    font-family:'fonte';
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 80px;
+}
+
+.minha-descricao {
+    z-index: 2;
+    border: 1px solid rgba(78, 78, 78, 0);
+    margin-top: 10%;
+    width: 80%;
+    padding: 25px;
+    height: 100px;
+    color: rgb(116, 116, 116);
+    font-size: 140%;
+    font-family:'fonte';
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: initial;
+}
+
+.frase-motivacional {
+    border: 1px solid rgba(78, 78, 78, 0);
+    margin-right: 50px;
+    margin-left: 400px;
+    margin-top: 1%;
+    color: rgb(116, 116, 116);
+
+}
+
+
+.titulo-inst {
+    border: 1px solid rgba(78, 78, 78, 0);
+    margin-left: 20px;
+    margin-top: 10%;
+    font-family:'fonte';
+    display: block;
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
+}
+
+.escolas {
+    border: 1px solid rgba(78, 78, 78, 0);
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 1%;    
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
+}
+
+.titulo-trabalho {
+    border: 1px solid rgba(78, 78, 78, 0);
+    margin-left: 20px;
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
+}
+
+.empresas {
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 20px;
+    font-family:'fonte';
+    font-size: 150%;
+    font-style: italic;
+    font-weight: initial;
+    color: rgb(116, 116, 116);
+}
+
+
+
+footer {
+    box-shadow: 0px -20px 30px rgb(202, 202, 202);
+    bottom: 0;
+    margin-top: 20%;
+    width: 100%;
+    padding: 12px;
+    height: 100px;
+    background-color: rgb(192, 204, 224);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+  
+.botao-inicial{
+    font-size: 10px;
+}
+
+.botao-projetos{
+    font-size: 10px;
+}
+
+.botao-inicial {
+    background: #91a1b3;
+    background-image: -webkit-linear-gradient(top, rgba(122, 147, 182, 0.602), #7794c3);
+    background-image: -moz-linear-gradient(top, rgba(102, 125, 155, 0.602), #7d94b8);
+    background-image: -ms-linear-gradient(top, rgba(113, 135, 163, 0.602), #7b8fb1);
+    background-image: -o-linear-gradient(top, rgba(124, 146, 175, 0.602), #8395b3);
+    background-image: -webkit-gradient(to bottom, rgba(125, 146, 173, 0.602), #7187aa);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 20px 0 #a3a3a3;
+    -moz-box-shadow: 0px 1px 20px 0 #8d8d8d;
+    box-shadow: 0px 10px 10px rgb(173, 173, 173);
+    text-shadow: 0px 1px 20px #808080;
+    border: solid #337FED 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .botao-inicial:hover {
+    border: solid #b5d4ff 1px;
+    background: #b6d2ff;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #add3ff);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #a7d0ff);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #a1caf8);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #aad2ff);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #add1fa);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+ }
+
+ .botao-projetos {
+    background: #3D94F6;
+    background-image: -webkit-linear-gradient(top, rgba(122, 147, 182, 0.602), #7794c3);
+    background-image: -moz-linear-gradient(top, rgba(102, 125, 155, 0.602), #7d94b8);
+    background-image: -ms-linear-gradient(top, rgba(113, 135, 163, 0.602), #7b8fb1);
+    background-image: -o-linear-gradient(top, rgba(124, 146, 175, 0.602), #8395b3);
+    background-image: -webkit-gradient(to bottom, rgba(125, 146, 173, 0.602), #7187aa);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 20px 0 #000000;
+    -moz-box-shadow: 0px 1px 20px 0 #000000;
+    box-shadow: 0px 10px 10px rgb(173, 173, 173);
+    text-shadow: 0px 1px 20px #000000;
+    border: solid #337FED 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .botao-projetos:hover {
+    border: solid #b5d4ff 1px;
+    background: #b6d2ff;
+    background-image: -webkit-linear-gradient(top, rgba(65, 78, 95, 0.602), #add3ff);
+    background-image: -moz-linear-gradient(top, rgba(65, 78, 95, 0.602), #a7d0ff);
+    background-image: -ms-linear-gradient(top, rgba(65, 78, 95, 0.602), #a1caf8);
+    background-image: -o-linear-gradient(top, rgba(65, 78, 95, 0.602), #aad2ff);
+    background-image: -webkit-gradient(to bottom, rgba(65, 78, 95, 0.602), #add1fa);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+ }
+
+
+ .input-nome {
+    border: 0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+    margin-right: 50px;
+    width: 200px;
+}
+
+ 
+
+ .input-email {
+    border:0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+    margin-left: 50px;
+    width: 200px;
+}
+ 
+
+ .text-area {
+    border:0;
+    border-bottom: 1px solid rgb(137, 167, 177);
+    outline: 0;
+ }
+ 
+
+
+
+ /*
+
+ SEGUNDA PAGINA STYLE 
+
+ */
+
+
+
+ .icones-programa1 {
+    border: 1px solid rgba(63, 63, 63, 0);
+    text-align: center;
+    height: 100px;
+}
+
+ .icones-programa2 {
+    border: 1px solid rgba(63, 63, 63, 0);
+    text-align: center;
+    height: 100px;
+ }
+
+ .icones-programa1 img {
+     margin-left: 10px;
+ }
+
+
+
+
+ /*
+ 
+ paginas de fotos do projeto
+ 
+ */
+
+
+ .foto1 {
+    border: 1px solid rgba(255, 255, 255, 0.952);
+    text-align: center;
+    border-radius: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
+ }
+
+ .foto2 {
+    border: 1px solid rgba(58, 58, 58, 0.952);
+    text-align: center;
+    border-radius: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
+ }
+
+ .foto-bordas {
+    border-radius: 30px;
+ }
+
+ .desenvolvido {
+    border: 1px solid rgba(58, 58, 58, 0);
+    width: 300px;
+    margin-left: 1000px;
+    margin-top: 0px;
+    font-family:'fonte';
+    font-size: 20px
+ }
