@@ -22,9 +22,12 @@
 main {
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    border: black 1px solid;
     padding: 20px;
     gap: 10px;
+}
+
+.espaço {
+    height: 100px;
 }
 
 .imagem {
@@ -43,3 +46,13 @@ main {
 .padding {
     padding: 10px;
 }
+
+.footer-container {
+    background-color: #323b3e;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+}
+
