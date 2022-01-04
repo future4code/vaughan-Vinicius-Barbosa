@@ -11,32 +11,59 @@
     
 }
 
+.fundo {
+    border: rgb(31, 30, 30) 1px solid;
+    display: flex;
+}
+
+.links {
+    padding-left: 5vh;
+    padding-top: 5vh;
+    justify-content: center;
+    align-items: center;
+    border: rgb(31, 30, 30) 1px solid;
+}
+.links a {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.link1 {
+    padding-top: 20px;
+    
+}
+.link2 {
+    padding-top: 20px;
+    
+}
+.link3 {
+    padding-top: 20px;
+    
+}
+
+.link4 {
+    padding-top: 20px;
+      
+}
 
 
 
 .esquerda {
-    height: 80vh;
-    display: flex;
-    border: rgb(31, 30, 30) 3px solid;
+    border: rgb(31, 30, 30) 1px solid;
+    width: 60vh;
+}
 
+
+.utilizar-grid {
 
 }
 
 .container-bolo {
-    display: flex;
-    margin-left: auto;
-    padding: 10px;
 
 }
-
-
-
-
-
-.utilizar-grid {
-    border: rgb(31, 30, 30) 3px solid;
-}
-
 
 
 header {
@@ -49,7 +76,9 @@ header {
 }
 
 .botao {
-    width: 100px;
+    width: 200px;
+    height: 50px;
+
 }
 
 main {
@@ -60,7 +89,8 @@ main {
 footer {
     background-color: mediumvioletred;
     height: 15vh;
-    display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
 }
