@@ -11,7 +11,7 @@
     padding: 0 16px;
     align-items: center;
     height: 100px;
-    
+
 }
 
 .caixa-busca {
@@ -54,5 +54,34 @@ main {
     align-items: center;
     justify-content: center;
     height: 90px;
+}
+
+@media screen and (max-device-width: 628px) {
+
+    .cabeça {
+        background-color:  rgb(239, 132, 58);
+        justify-content: space-between;
+        padding: 0 16px;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        height: 80px;
+        display: flex;
+        
+    }
+
+    main {
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 40px;
+        gap: 10px;
+        
+    }
+    
+    .caixa-busca {
+        padding: 5px;
+        border-radius: 7px;    
+        margin: 10px
+    }
 }
 
