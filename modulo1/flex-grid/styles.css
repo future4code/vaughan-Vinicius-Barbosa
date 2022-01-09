@@ -11,60 +11,6 @@
     
 }
 
-.fundo {
-    border: rgb(31, 30, 30) 1px solid;
-    display: flex;
-}
-
-.links {
-    padding-left: 5vh;
-    padding-top: 5vh;
-    justify-content: center;
-    align-items: center;
-    border: rgb(31, 30, 30) 1px solid;
-}
-.links a {
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-    
-}
-
-.link1 {
-    padding-top: 20px;
-    
-}
-.link2 {
-    padding-top: 20px;
-    
-}
-.link3 {
-    padding-top: 20px;
-    
-}
-
-.link4 {
-    padding-top: 20px;
-      
-}
-
-
-
-.esquerda {
-    border: rgb(31, 30, 30) 1px solid;
-    width: 60vh;
-}
-
-
-.utilizar-grid {
-
-}
-
-.container-bolo {
-
-}
-
 
 header {
     height: 100px;
@@ -73,24 +19,111 @@ header {
     justify-content: space-between;
     padding: 0 16px;
     align-items: center;
+    font-size: 1.7vw;
+    font-weight: 100;
 }
+
+header h1 {
+    margin: 1vw;
+    
+}
+
 
 .botao {
-    width: 200px;
-    height: 50px;
-
+    width: 19vw;
+    height: 4vh
 }
+
+/* Botoes da lateral da pagina*/
+
+
+.fundo {
+    border: rgb(31, 30, 30) 1px solid;
+    display: flex;
+    height: 100%;
+    padding: 10px;
+}
+
+.esquerda {
+    border: rgb(31, 30, 30) 1px solid;
+    width: 25%;
+}
+
+.links {
+    display: flex;
+    padding: 2%;
+    width: 100%;
+    height: 10%;
+}
+
+.links img {
+    width: 20%;
+    height: 80%;
+}
+
+.seta {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-end
+}
+
+.foto {
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-size: 1.2vw;
+    
+}
+
+
+/* -----------------------------------------------  */
+
+
+.direita {
+    display: grid;
+    border: rgb(31, 30, 30) 1px solid;
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.bolo {
+    background-color: aliceblue;
+    width: 95%;
+    height: 95%;
+    margin: 2px 5px;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.5vw;
+    box-shadow: 2px 2px 2px black;
+}
+
+.bolo img {
+    width: 100%;
+    height: 70%;
+}
+
+.bolo h4 {
+    text-align: center;
+    font-size: 1.5vw;
+}
+
 
 main {
     background-color: #f2d0e0;
-    flex-grow: 1;
 }
 
 footer {
+    display: flex;
     background-color: mediumvioletred;
-    height: 15vh;
+    height: 10vh;
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    padding: 20px;
 }
