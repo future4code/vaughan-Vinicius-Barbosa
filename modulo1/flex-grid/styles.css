@@ -38,14 +38,14 @@ header h1 {
 
 
 .fundo {
-    border: rgb(31, 30, 30) 1px solid;
+    
     display: flex;
     height: 100%;
     padding: 10px;
 }
 
 .esquerda {
-    border: rgb(31, 30, 30) 1px solid;
+   
     width: 25%;
 }
 
@@ -87,7 +87,6 @@ header h1 {
 
 .direita {
     display: grid;
-    border: rgb(31, 30, 30) 1px solid;
     width: 80%;
     grid-template-columns: repeat(4, 1fr);
 }
