@@ -1,4 +1,4 @@
-<h1>Esse projeto visa alterar arquivos de codigo em html e css e passar para react.</h1>
+<h2>O intuito deste projeto foi passar para react arquivos css e html.</h2>
 
 ### jsx-labetube em react introdutorio 
 
