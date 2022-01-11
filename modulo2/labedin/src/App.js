@@ -27,7 +27,7 @@ function App() {
         descricao='viniciuscicone@gmail.com'
         />
           
-          <CardPequeno
+        <CardPequeno
         valorQualquer='Endereço:'
         descricao='Rua x numero y - cidade sao vicente - SP'
         />
