@@ -121,6 +121,9 @@ class App extends React.Component {
 
     
     this.setState({ MensagemEUsuario: novoMensagens });
+    
+    this.setState({valorInputNome: ""})
+    this.setState({valorInputMensagem: ""})
   };
 
 
