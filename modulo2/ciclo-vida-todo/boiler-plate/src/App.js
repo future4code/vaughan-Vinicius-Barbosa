@@ -32,8 +32,6 @@ class App extends React.Component {
             completa: true
          },
 
-
-
       ],
       inputValue: '',
       filtro: ''
@@ -49,15 +47,16 @@ class App extends React.Component {
 
    onChangeInput = (event) => {
       this.setState({ inputValue: event.target.value });
+     
    }
-
+ 
    criaTarefa = () => {
       const novaTarefa = {
          id: Date.now(),
          texto: this.state.inputValue,
          completa: false,
       }
-      const novaLista = { ...this.state.tarefas, novaTarefa }
+      const novaLista = [...this.state.tarefas, novaTarefa] 
       this.setState({ tarefas: novaLista })
    }
 
@@ -115,4 +114,4 @@ class App extends React.Component {
    }
 }
 
-export default App
+export default App;
