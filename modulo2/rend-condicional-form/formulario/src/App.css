@@ -1,3 +1,5 @@
+
+
 div {
   background-color: #6d778b;
 }
@@ -14,13 +16,16 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 .formulario input {
   height:50%;
   width: 100%;
   margin: 10px 0px;
+  outline: 0;
+  
+  
 }
 
 
