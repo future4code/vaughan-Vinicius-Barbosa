@@ -26,49 +26,78 @@ class App extends React.Component {
             texto: 'Minha tarefa 1',
             completa: false,
          },
-         {
-            id: Date.now(),
-            texto: 'Texto da segunda tarefa -_-',
-            completa: true
-         },
-
+         
       ],
       inputValue: '',
       filtro: ''
    }
 
+   
+
+ 
+
    componentDidUpdate() {
+      localStorage.setItem('estado', JSON.stringify( this.state.tarefas ))
 
    };
 
    componentDidMount() {
+    
+     const tarefasLocais = JSON.parse(localStorage.getItem("estado"))
 
+      if(this.state.tarefas) {
+         this.setState({ tarefas: tarefasLocais})
+
+      }
+     
+   
+ 
    };
+   
+
+     
+     
 
    onChangeInput = (event) => {
       this.setState({ inputValue: event.target.value });
-     
+
    }
- 
+
    criaTarefa = () => {
       const novaTarefa = {
          id: Date.now(),
          texto: this.state.inputValue,
          completa: false,
       }
-      const novaLista = [...this.state.tarefas, novaTarefa] 
+      const novaLista = [...this.state.tarefas, novaTarefa]
       this.setState({ tarefas: novaLista })
+      
+
    }
 
    selectTarefa = (id) => {
+      const AlterarTarefa = this.state.tarefas.map((tarefa) => {
+         if (id === tarefa.id) {
+            const mudarTarefa = {
+               ...tarefa,
+               completa: !tarefa.completa
+            }
+            return mudarTarefa
+         } else {
+            return tarefa
+         }
+      })
+      this.setState({ tarefas: AlterarTarefa })
+}
 
-   }
 
    onChangeFilter = (event) => {
       this.setState({ filtro: event.target.value });
    }
 
+
    render() {
+      
       const listaFiltrada = this.state.tarefas.filter(tarefa => {
          switch (this.state.filtro) {
             case 'pendentes':
@@ -84,6 +113,7 @@ class App extends React.Component {
          <div className="App">
             <h1>Lista de tarefas</h1>
             <InputsContainer>
+            
                <input value={this.state.inputValue} onChange={this.onChangeInput} />
                <button onClick={this.criaTarefa}>Adicionar</button>
             </InputsContainer>
