@@ -63,8 +63,7 @@ class App extends React.Component {
       }
       const novaLista = [...this.state.tarefas, novaTarefa]
       this.setState({ tarefas: novaLista })
-      
-
+      this.setState({ inputValue: "" })
    }
 
    selectTarefa = (id) => {
@@ -80,6 +79,7 @@ class App extends React.Component {
          }
       })
       this.setState({ tarefas: AlterarTarefa })
+     
 }
 
 
@@ -90,7 +90,7 @@ class App extends React.Component {
 
    render() {
       
-      const listaFiltrada = this.state.tarefas.filter(tarefa => {
+         const listaFiltrada = this.state.tarefas.filter(tarefa => {
          switch (this.state.filtro) {
             case 'pendentes':
                return !tarefa.completa
@@ -105,7 +105,6 @@ class App extends React.Component {
          <div className="App">
             <h1>Lista de tarefas</h1>
             <InputsContainer>
-            
                <input value={this.state.inputValue} onChange={this.onChangeInput} />
                <button onClick={this.criaTarefa}>Adicionar</button>
             </InputsContainer>
@@ -113,7 +112,7 @@ class App extends React.Component {
 
             <InputsContainer>
                <label>Filtro</label>
-               <select value={this.state.filtro} onChange={this.onChangeFilter}>
+               <select value={this.state.filter} onChange={this.onChangeFilter}>
                   <option value="">Nenhum</option>
                   <option value="pendentes">Pendentes</option>
                   <option value="completas">Completas</option>
