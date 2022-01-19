@@ -45,7 +45,10 @@ class App extends React.Component {
 
    componentDidMount() {
       const estado = JSON.parse(localStorage.getItem("tarefa"))
-      this.setState({ tarefas: estado })
+
+      if (estado) {
+         this.setState({ tarefas: estado})
+       }
    };
 
      
@@ -122,6 +125,7 @@ class App extends React.Component {
                {listaFiltrada.map(tarefa => {
                   return (
                      <Tarefa
+                        key={tarefa.id}
                         completa={tarefa.completa}
                         onClick={() => this.selectTarefa(tarefa.id)}
                      >
