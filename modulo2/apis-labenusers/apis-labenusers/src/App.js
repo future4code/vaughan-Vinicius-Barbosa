@@ -62,7 +62,7 @@ class App extends React.Component {
       const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
       axios.post(url, body, axiosConfiguraçao)
          .then((respostaPositiva) => {
-            alert(`Usuario cadastrado com sucesso ${respostaPositiva}`)
+            alert(`Usuario cadastrado com sucesso`)
             this.setState({ inputNomeUsuario: '' })
             this.setState({ inputEmailUsuario: '' })
             this.obterListaUsuarios()
@@ -74,13 +74,6 @@ class App extends React.Component {
          })
    }
 
-
-   nomesFiltrados = () => {
-      const nomes = this.state.usuarios.map((usuarios) => {
-         return usuarios.name
-      })
-      return nomes
-   }
 
 
    mudaPagina = () => {
@@ -94,17 +87,28 @@ class App extends React.Component {
       }
    }
 
+   
+
    mostrarPagina = () => {
 
+      const usuario = this.state.usuarios.map((item,x) => {
+    
+         return (
+            <div key={x}>{item.name}</div>
+         );
+       });
+ 
       if (this.state.pagina) {
 
-         return <>
+         return (
+            <>
             <Cadastro
-               listaDeNomes={''}
-
-
+            listaDeNomes={usuario}
+            
             />
-         </>
+            
+            </>
+         )
       } else {
          return <>
             <PaginaInicial
@@ -122,7 +126,6 @@ class App extends React.Component {
 
    render() {
 
-      console.log(this.state.usuarios)
 
       return (
          <div className="App">
