@@ -20,22 +20,22 @@ class App extends React.Component {
 
    componentDidMount() {
       this.obterListaUsuarios()
-    }
+   }
 
 
-   nomeInput=(event)=>{
-      
-      
-   this.setState({ inputNomeUsuario: event.target.value })
+   nomeInput = (event) => {
+
+
+      this.setState({ inputNomeUsuario: event.target.value })
 
    }
 
-   
-   emailInput=(event)=>{
-      
-      
+
+   emailInput = (event) => {
+
+
       this.setState({ inputEmailUsuario: event.target.value })
-   
+
    }
 
 
@@ -45,21 +45,21 @@ class App extends React.Component {
       axios
          .get(url, axiosConfiguraçao)
          .then((respostaPositiva) => {
-            this.setState({ usuarios: respostaPositiva.data.result.list })
-            console.log(respostaPositiva.data.result.list)
+            this.setState({ usuarios: respostaPositiva.data })
+
          })
          .catch((Erro) => {
-            console.log(Erro.respostaPositiva)
+            console.log(` Erro ao requisitar lista de usuarios ${Erro.response}`)
          })
    }
 
    criarUsuario = () => {
       const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
       const body = {
-         nome :  this.state.inputNomeUsuario ,
-         email : this.state.inputEmailUsuario
+         name: this.state.inputNomeUsuario,
+         email: this.state.inputEmailUsuario
       }
-      const axiosConfiguraçao = {headers:{Authorization:'vinicius-cicone-vaughan'} }
+      const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
       axios.post(url, body, axiosConfiguraçao)
          .then((respostaPositiva) => {
             alert(`Usuario cadastrado com sucesso ${respostaPositiva}`)
@@ -71,9 +71,16 @@ class App extends React.Component {
          .catch((erro) => {
             console.log(erro.response)
             alert(erro.response)
-      })
+         })
    }
 
+
+   nomesFiltrados = () => {
+      const nomes = this.state.usuarios.map((usuarios) => {
+         return usuarios.name
+      })
+      return nomes
+   }
 
 
    mudaPagina = () => {
@@ -93,7 +100,7 @@ class App extends React.Component {
 
          return <>
             <Cadastro
-               listaDeNomes={() => { this.state.usuarios.map((nome) => nome.nome) }}
+               listaDeNomes={''}
 
 
             />
@@ -101,7 +108,7 @@ class App extends React.Component {
       } else {
          return <>
             <PaginaInicial
-               botaoInicial={() =>  this.criarUsuario() }
+               botaoInicial={() => this.criarUsuario()}
                input1={<input value={this.state.inputNomeUsuario} onChange={this.nomeInput} placeholder='Nome'></input>}
                input2={<input value={this.state.inputEmailUsuario} onChange={this.emailInput} placeholder='Email'></input>}
 
@@ -115,7 +122,7 @@ class App extends React.Component {
 
    render() {
 
-      
+      console.log(this.state.usuarios)
 
       return (
          <div className="App">
@@ -123,9 +130,9 @@ class App extends React.Component {
             <header className='App-header'>
                <button onClick={() => { this.mudaPagina() }}>Trocar tela</button>
 
-               
+
                {this.mostrarPagina()}
- 
+
             </header>
 
          </div>
