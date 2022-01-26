@@ -1,3 +1,4 @@
+import { BotaoTroca } from "./estilo";
 
 export default function Cadastro(props) {
 
@@ -5,11 +6,11 @@ export default function Cadastro(props) {
     return <div>
         PAGINA DE CADASTRO
         <hr/>
-        <div>{props.listaDeNomes}</div>
+        <div><i>{props.listaDeNomes}</i></div>
       
         <hr/>
         PROCURAR USUARIO<br/>
         <input type="text" value={ props.valorProcura } placeholder="Digite aqui"/><br/>
-        <button onClick={ props.botaoProcurar }  >Salvar ediçao</button>
+        <BotaoTroca onClick={ props.botaoProcurar }  >Salvar ediçao</BotaoTroca>
     </div>
 }
