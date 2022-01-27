@@ -6,8 +6,9 @@ export function PaginaLista(props) {
 
     return(
         <>
+             
            <div>{ props.lista }</div>
-           <button onClick={ props.paginaDoVideo } >IR PARA MUSICAS</button>
+           <button onClick={ props.paginaMusicas } >PEGAR MUS</button>
             
         </>
      
