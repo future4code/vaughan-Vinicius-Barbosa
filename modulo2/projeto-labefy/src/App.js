@@ -60,6 +60,7 @@ class App extends react.Component {
             this.getAllPlaylists()
          })
          .catch((erro) => {
+            alert('Erro veja se nao ha uma outra playlist com mesmo nome ou contate o suporte tecnico')
             console.log("algo deu errado ao criar a playlists")
             console.log(erro.data)
          })
