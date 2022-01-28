@@ -16,7 +16,8 @@ class App extends react.Component {
       playlist: [],
 
       paginas: 'paginaLista',
-      nomeDaPlaylist: ""
+      nomeDaPlaylist: "",
+      nomeCriaPlaylist: ""
    }
 
    componentDidMount() {
@@ -25,6 +26,11 @@ class App extends react.Component {
 
    }
 
+   pegarInput=(event)=> {
+
+      this.setState({ nomeCriaPlaylist: event.target.value })
+
+   }
 
 
    getAllPlaylists = () => {
@@ -40,6 +46,26 @@ class App extends react.Component {
             console.log(erro.data)
          })
    }
+
+   addPlaylist = () => {
+      const url = urlDefault
+      const body = {
+         name : this.state.nomeCriaPlaylist
+      }
+      const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
+      axios
+         .post(url, body, axiosConfiguraçao)
+         .then((respostaPositiva) => {
+            alert('playlist criada com sucesso !')
+            this.getAllPlaylists()
+         })
+         .catch((erro) => {
+            console.log("algo deu errado ao criar a playlists")
+            console.log(erro.data)
+         })
+   }
+
+
 
    getAllTracks = (id, nome) => {
 
@@ -89,7 +115,11 @@ class App extends react.Component {
 
       if (this.state.paginas === 'paginaCriacao') {
 
-         return <PaginaCriaçao />
+         return <PaginaCriaçao 
+            value={this.state.nomeCriaPlaylist}
+            onChange={this.pegarInput}
+            criar={ this.addPlaylist }
+         />
 
       } else if (this.state.paginas === 'paginaLista') {
 
@@ -156,7 +186,7 @@ class App extends react.Component {
 
 
    render() {
-
+      console.log(this.state.nomeCriaPlaylist)
       return (
          <PaginaToda>
             <Div className='botoes'>

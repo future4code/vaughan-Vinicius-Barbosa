@@ -23,7 +23,7 @@ export function PaginaCriaçao(props) {
         <>
             PAGINA DE CRIAR PLAYLIST
             <ContainerInput>
-                <input placeholder="Digite aqui o nome da playlist"></input>
+                <input onChange={ props.onChange } value={ props.value } placeholder="Digite aqui o nome da playlist"></input>
             </ContainerInput>
             <div>
                 <Botao onClick={props.criar} >Criar</Botao>
