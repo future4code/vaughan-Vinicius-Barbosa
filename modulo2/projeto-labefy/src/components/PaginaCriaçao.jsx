@@ -10,9 +10,18 @@ input{
     font-size: 20px;
 }
 `
-const Botao = styled.button`
-    height: 30px;
-    width: 60px;
+const Botao = styled.div`
+    display: flex;
+    height: 60px;
+    width: 200px;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+        background-color: #2a7ea5;
+    }
+
 `
 
 
@@ -27,10 +36,9 @@ export function PaginaCriaçao(props) {
             </ContainerInput>
             <div>
                 <Botao onClick={props.criar} >Criar</Botao>
+                
             </div>
 
         </>
     )
-
-
 } 

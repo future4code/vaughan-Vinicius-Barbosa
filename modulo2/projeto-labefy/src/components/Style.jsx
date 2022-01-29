@@ -8,20 +8,51 @@ export const PaginaToda = styled.div `
 
 `
 
+
+export const Playlist = styled.div `
+
+background-color: gray ;
+width: 70%;
+height: 50%;
+padding: 10px;
+margin: 10px;
+
+
+`
+
 export const Div = styled.header`
 
 display:grid; 
 grid-template-columns: repeat(3, 1fr);
 justify-items: center;
+padding: 10px;
+
+
+
 
 button {
     padding: 10px;
     margin: 30px 20px;
+   
   }
 
 div {
     width: 50%;
-    background-color: gray
+    background-color: gray;
+    padding: 10px;
+    margin:10px;
+    cursor: pointer;
+    &:hover {
+        background-color: #2a7ea5;
+    }
+}
+
+a {
+    width: 50%;
+    background-color: gray;
+    padding: 10px;
+    margin:10px;
+
 }
 
 `

@@ -8,7 +8,7 @@ export function PaginaLista(props) {
         <>
              
            <div>{ props.lista }</div>
-           <button onClick={ props.paginaMusicas } >PEGAR MUS</button>
+           <button onClick={ props.paginaMusicas } >ENTRAR</button>
             
         </>
      

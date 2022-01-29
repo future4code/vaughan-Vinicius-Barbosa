@@ -1,10 +1,11 @@
 import react from 'react'
 import { PaginaCriaçao } from './components/PaginaCriaçao';
 import { PaginaLista } from './components/PaginaLista';
-import { PaginaMusicas } from './components/PaginaMusicas';
-import { Div, Header, PaginaToda } from './components/Style';
+import { BotaoApagarMusica, CardMusicas, PaginaMusicas } from './components/PaginaMusicas';
+import { Div, Header, PaginaToda, Playlist } from './components/Style';
 import axios from 'axios';
 import { urlDefault } from './Url/Urls'
+import { PaginaCriarMusica } from './components/PaginaCriarMusica';
 
 
 class App extends react.Component {
@@ -17,21 +18,34 @@ class App extends react.Component {
 
       paginas: 'paginaLista',
       nomeDaPlaylist: "",
-      nomeCriaPlaylist: ""
+      nomeCriaPlaylist: "",
+      idPlaylist: ""
    }
 
    componentDidMount() {
 
       this.getAllPlaylists()
-
+      this.getAllTracks()
    }
 
-   pegarInput=(event)=> {
+   mudarEstado=()=>{
+      this.setState({ paginas: 'paginaLista' })
+   }
+
+   pegarInput = (event) => {
 
       this.setState({ nomeCriaPlaylist: event.target.value })
 
    }
 
+   enviarEstado = () => {
+
+      return (
+         <>
+            {this.props.state}
+         </>
+      )
+   }
 
    getAllPlaylists = () => {
       const url = urlDefault
@@ -50,7 +64,7 @@ class App extends react.Component {
    addPlaylist = () => {
       const url = urlDefault
       const body = {
-         name : this.state.nomeCriaPlaylist
+         name: this.state.nomeCriaPlaylist
       }
       const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
       axios
@@ -67,10 +81,9 @@ class App extends react.Component {
    }
 
 
-
    getAllTracks = (id, nome) => {
 
-      
+
       const url = `${urlDefault}${id}/tracks`
       const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
 
@@ -78,10 +91,13 @@ class App extends react.Component {
          .get(url, axiosConfiguraçao)
          .then((respostaPositiva) => {
             console.log("Deu certo")
+            this.setState({ idPlaylist: id })
             this.setState({ nomeDaPlaylist: nome })
+            
             this.setState({ musicas: respostaPositiva.data.result.tracks })
             console.log(respostaPositiva)
-
+            
+            this.setState({ paginas: 'paginaMusicas'  })
          })
          .catch((erro) => {
             console.log("algo deu errado ao pegar as musicas")
@@ -94,7 +110,7 @@ class App extends react.Component {
       if (confirmaçao === true) {
 
 
-         const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`
+         const url = `${urlDefault}${id}`
          const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
 
          axios.delete(url, axiosConfiguraçao)
@@ -116,10 +132,10 @@ class App extends react.Component {
 
       if (this.state.paginas === 'paginaCriacao') {
 
-         return <PaginaCriaçao 
+         return <PaginaCriaçao
             value={this.state.nomeCriaPlaylist}
             onChange={this.pegarInput}
-            criar={ this.addPlaylist }
+            criar={this.addPlaylist}
          />
 
       } else if (this.state.paginas === 'paginaLista') {
@@ -129,41 +145,70 @@ class App extends react.Component {
       } else if (this.state.paginas === 'paginaMusicas') {
 
          return <PaginaMusicas
-            div={this.listaMusicas()}
+                  
+                  idPlaylist={ this.state.idPlaylist }
+                  musicas={ this.state.musicas }
+                  
+                  />
+      } else if (this.state.paginas === 'PaginaCriarMusica') {
+
+         return <PaginaCriarMusica
+            id={this.state.idPlaylist}
 
          />
       }
    }
+   /* 
+   
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/dfAtMv6KKCk" 
+   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+   clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
 
-   listaMusicas = (id) => {
+   https://www.youtube.com/watch?v= dfAtMv6KKCk
 
-      const lista_de_musicas = this.state.musicas.map((item, x) => {
 
-         return (
-            <div key={x}>
-              Nome: {item.name} Artista : {item.artist} 
 
-               <button onClick={''}>XX</button>
-            </div>
-         )
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/dfAtMv6KKCk" 
+   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+   encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
+   https://www.youtube.com/watch?v=dfAtMv6KKCk
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/dfAtMv6KKCk?controls=0" 
+   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+   encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   */
+
+   listaMusicas = () => {
+
+      const lista_de_musicas = this.state.musicas.map((musica, x) => {
+         let urlSplit = musica.url.split("https://www.youtube.com/watch?v=")
+         urlSplit[0] = `https://www.youtube.com/embed/`
+         const newUrl = urlSplit.join('')
+
+         return <CardMusicas key={x}>
+            
+            <iframe
+               width="600" height="400"
+               src={newUrl}
+               allow="encrypted-media"
+               title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+               clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+               </iframe>
+
+               {console.log(newUrl)}
+            <p>{musica.name}</p>
+            <p>{musica.artist}</p>
+
+            <BotaoApagarMusica>Apagar Musica</BotaoApagarMusica>
+         </CardMusicas>
+
       })
       return lista_de_musicas
-
    }
 
-
-   paginaMusicas = () => {
-
-      return this.setState({ paginas: 'paginaMusicas' })
-
-   }
-
-   mudaPaginas = () => {
-
-      if (this.state.paginas) {
-         return this.setState({ paginas: 'paginaCriacao' })
-      }
-   }
 
 
    paginaLista = (id) => {
@@ -171,14 +216,14 @@ class App extends react.Component {
       const lista_de_playlist = this.state.playlist.map((item, x) => {
 
          return (
-            <div key={x}>
-               <hr />
+            <Playlist key={x} className='playlist' >
+
                <PaginaLista
                   lista={item.name}
                   paginaMusicas={() => this.getAllTracks(item.id, item.name)}
 
-               /> <button /* onClick={'() => this.deletePlaylist(item.id, item.name)'} */>APAGAR</button>
-            </div>
+               /> <button  onClick={'() => this.deletePlaylist(item.id, item.name)'} >APAGAR</button>
+            </Playlist>
          )
       })
       return lista_de_playlist
@@ -187,26 +232,30 @@ class App extends react.Component {
 
 
    render() {
-      console.log(this.state.nomeCriaPlaylist)
+
+
+
+    
       return (
          <PaginaToda>
             <Div className='botoes'>
-               <button onClick={() => this.mudaPaginas()} > CRIA PLAYLIST</button>
-               <button onClick={() => this.setState({ paginas: 'paginaLista' })} > PLAYLISTS</button>
-               <button onClick={ () => this.setState({ paginas: 'paginaMusicas' }) } >LISTA DE MUSICA ATUAL</button><div></div><div >Voce esta na lista: {this.state.nomeDaPlaylist} </div><div></div>
-
+               <div onClick={() => this.setState({ paginas: 'paginaCriacao' })} > CRIA PLAYLIST</div>
+               <div onClick={() => this.setState({ paginas: 'paginaLista' })} > PLAYLISTS</div>
+               <div onClick={() => this.setState({ paginas: 'paginaMusicas' })}>LISTA DE MUSICA ATUAL</div>
+               <div onClick={() => this.setState({ paginas: 'PaginaCriarMusica' })} >ADICIONAR MUSICA A PLAYLIST ATUAL</div>
+               <a><strong>LABEFY</strong> SUA MUSICAS FAVORITAS EM UM SO LUGAR</a>
+               <a onClick={() => console.log(this.state)} >VOCE ESTA NA PLAYLIST:<br />
+                  {this.state.nomeDaPlaylist.toUpperCase()}</a>
             </Div>
 
             <Header>
-
                {this.Navegar()}
-
             </Header>
          </PaginaToda>
       );
    }
 }
 
-//Copie o codigo de imcorporaçao do video youtube.com para adicionar na playlist. 
+
 
 export default App;
