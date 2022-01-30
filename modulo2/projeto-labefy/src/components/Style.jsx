@@ -16,7 +16,15 @@ width: 70%;
 height: 50%;
 padding: 10px;
 margin: 10px;
+border-radius: 110px 110px 100px 100px;
 
+button {
+    background-color: #577780;
+    width: 20vw;
+    height: 6vh;
+    border-radius: 10px;
+    
+}
 
 `
 
@@ -37,10 +45,11 @@ button {
   }
 
 div {
-    width: 50%;
+    width: 90%;
     background-color: gray;
     padding: 10px;
     margin:10px;
+
     cursor: pointer;
     &:hover {
         background-color: #2a7ea5;
@@ -48,11 +57,11 @@ div {
 }
 
 a {
-    width: 50%;
+    width: 90%;
     background-color: gray;
     padding: 10px;
     margin:10px;
-
+    font-size: 20px;
 }
 
 `
@@ -68,5 +77,5 @@ export const Header = styled.main`
     align-items: center;
     font-size: calc(10px + 2vmin);
     color: white;
- 
+
 `

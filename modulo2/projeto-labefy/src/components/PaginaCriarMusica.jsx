@@ -8,13 +8,38 @@ import { urlDefault } from "../Url/Urls";
 const ContainerInput = styled.div` 
 
 
+display: flex;
+flex-direction: column;
+align-items: center;
+input {
+
+
+    display: flex;
+    outline: 0;
+    height: 30px;
+    width: 50vw;
+    font-size: 20px;
+    align-items: center;
+    margin: 5px;
+    background-color: #b4b4b4;
+    border-radius: 10px;
+
+}
+  
 
 
 `
 
+const InputsContainer = styled.div `
+
+margin-top: 50px;
+
+`
+
+
 const BotaoEnviar = styled.button`
 
-
+    border-radius: 5px;
     width: 50%;
     background-color: gray;
     padding: 10px;
@@ -23,7 +48,7 @@ const BotaoEnviar = styled.button`
     &:hover {
         background-color: #2a7ea5;
     }
-
+    
 
 `
 
@@ -58,6 +83,31 @@ export class PaginaCriarMusica extends React.Component {
         this.setState({ codigoYoutube: event.target.value })
     }
 
+
+    
+   getAllTracks = (id, nome) => {
+
+
+    const url = `${urlDefault}${id}/tracks`
+    const axiosConfiguraçao = { headers: { Authorization: 'vinicius-cicone-vaughan' } }
+
+    axios
+       .get(url, axiosConfiguraçao)
+       .then((respostaPositiva) => {
+          console.log("Deu certo")
+          this.setState({ idPlaylist: id })
+          this.setState({ nomeDaPlaylist: nome })
+          
+          this.setState({ musicas: respostaPositiva.data.result.tracks })
+          console.log(respostaPositiva)
+          
+          this.setState({ paginas: 'paginaMusicas'  })
+       })
+       .catch((erro) => {
+          console.log("algo deu errado ao pegar as musicas")
+          console.log(erro.data)
+       })
+ }
     
    addMusicPlaylist = () => {
     const url = `${urlDefault}${this.state.idPlaylist}/tracks`
@@ -79,18 +129,22 @@ export class PaginaCriarMusica extends React.Component {
 
 
     render() {
-        console.log(this.state.idPlaylist)
+        
         return (
             
-            <div>PAGINA COLOCAR MUSICA NA PLAYLIST ATUAL<br />
+            <ContainerInput>PAGINA COLOCAR MUSICA NA PLAYLIST ATUAL<br />
 
-                Copie o codigo de imcorporaçao do video youtube.com para adicionar na playlist.
+                Copie so a Url do video youtube.com para adicionar na playlist.<br/>
+                Certifique-se de ter selecionado a playlist
+                <InputsContainer>
                 <div><input onChange={this.pegarNomeMusica} value={this.state.nomeMusica}  placeholder="Digite aqui o nome da musica" ></input></div>
                 <div><input onChange={this.pegarNomeArtista} value={this.state.nomeArtista} placeholder="Digite aqui o artista" ></input></div>
                 <div><input onChange={this.pegarCodigoYoutube} value={this.state.codigoYoutube} placeholder="Codigo de imcorporaçao" ></input></div>
+                </InputsContainer>
+       
                 <BotaoEnviar onClick={() => this.addMusicPlaylist()} className="botaoEnviarMusica">Enviar</BotaoEnviar>
 
-            </div>
+            </ContainerInput>
 
         )
     }

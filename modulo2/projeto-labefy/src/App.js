@@ -28,6 +28,8 @@ class App extends react.Component {
       this.getAllTracks()
    }
 
+   
+
    mudarEstado=()=>{
       this.setState({ paginas: 'paginaLista' })
    }
@@ -191,14 +193,12 @@ class App extends react.Component {
          return <CardMusicas key={x}>
             
             <iframe
-               width="600" height="400"
+               width="100vw" height="1000vh"
                src={newUrl}
                allow="encrypted-media"
-               title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+               title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; 
                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                </iframe>
-
-               {console.log(newUrl)}
             <p>{musica.name}</p>
             <p>{musica.artist}</p>
 
@@ -222,7 +222,7 @@ class App extends react.Component {
                   lista={item.name}
                   paginaMusicas={() => this.getAllTracks(item.id, item.name)}
 
-               /> <button  onClick={'() => this.deletePlaylist(item.id, item.name)'} >APAGAR</button>
+               /> <button  onClick={() => this.deletePlaylist(item.id, item.name)} >APAGAR</button>
             </Playlist>
          )
       })
@@ -241,7 +241,7 @@ class App extends react.Component {
             <Div className='botoes'>
                <div onClick={() => this.setState({ paginas: 'paginaCriacao' })} > CRIA PLAYLIST</div>
                <div onClick={() => this.setState({ paginas: 'paginaLista' })} > PLAYLISTS</div>
-               <div onClick={() => this.setState({ paginas: 'paginaMusicas' })}>LISTA DE MUSICA ATUAL</div>
+               <div onClick={() => this.setState({ paginas: 'paginaMusicas' }).this.getAllTracks(this.state.idPlaylist)  }>LISTA DE MUSICA ATUAL</div>
                <div onClick={() => this.setState({ paginas: 'PaginaCriarMusica' })} >ADICIONAR MUSICA A PLAYLIST ATUAL</div>
                <a><strong>LABEFY</strong> SUA MUSICAS FAVORITAS EM UM SO LUGAR</a>
                <a onClick={() => console.log(this.state)} >VOCE ESTA NA PLAYLIST:<br />

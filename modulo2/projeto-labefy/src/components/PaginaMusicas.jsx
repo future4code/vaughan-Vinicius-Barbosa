@@ -12,11 +12,19 @@ align-items: center;
 export const CardMusicas = styled.div`
     display:flex;
     background-color: gray;
-    height: 50%;
+    height: 100vh;
+    width: 70vw;
     padding: 10px;
     margin: 10px;
     flex-direction: column;
     align-items: center;
+
+
+   iframe {
+      border-radius: 15px
+
+   }
+
 `
 
 export const BotaoApagarMusica = styled.div`
@@ -25,7 +33,7 @@ background-color: #526a72;
 width: 200px;
 height: 50px;
 cursor: pointer;
-
+border-radius: 5px;
 `
 
 
