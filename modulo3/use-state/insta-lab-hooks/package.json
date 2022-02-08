@@ -1,4 +1,7 @@
 {
+  "resolutions": { 
+    "@babel/preset-env": "7.5.5" 
+  },
   "name": "insta4",
   "version": "0.1.0",
   "private": true,
