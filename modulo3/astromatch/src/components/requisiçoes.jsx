@@ -6,12 +6,12 @@ import { Url } from './url'
 
 export const getPerson = (estado) => {
 
-  axios(`${Url}/person`)
+  axios.get(`${Url}/person`)
 
     .then((positive) => {
 
-     estado(positive.data.profile)
-      
+      estado(positive.data.profile)
+
     })
     .catch((negative) => {
 
@@ -24,16 +24,47 @@ export const getPerson = (estado) => {
 
 export const getMatchs = (estado) => {
 
-    axios(`${Url}/matches`)
+  axios.get(`${Url}/matches`)
 
-      .then((positive) => {
+    .then((positive) => {
+      console.log(positive)
+      estado(positive.data.matches)
 
-        console.log(positive.data.profile)
-        
-      })
-      .catch((negative) => {
+    })
+    .catch((negative) => {
 
-        console.log(negative)
+      console.log(negative)
 
-      })
-  }
+    })
+}
+
+
+
+export const choiceMatch = (id, estado ) => {
+
+   const body= {
+      "id": id,
+      "choice": true
+   }
+
+  axios.post(`${Url}/choose-person`, body)
+
+    .then((positive) => {
+      
+    })
+    .catch((negative) => {
+      console.log(negative)
+    })
+}
+
+export const clear = () => {
+
+  axios.put(`${Url}/clear`)
+
+    .then((positive) => {
+         alert('limpo')
+    })
+    .catch((negative) => {
+      console.log(negative)
+    })
+}

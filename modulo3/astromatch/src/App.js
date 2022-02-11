@@ -1,8 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components'
-import { getMatchs, getPerson } from './components/requisiçoes';
-import { Container, ContainerFoto, ContainerImgs, Coracao, Foto, MainContainer } from './components/styled';
+import { getMatchs, getPerson,choiceMatch,clear } from './components/requisiçoes';
+import {  ContainerFoto, ContainerImgs, ContainerBotoes,  Foto, MainContainer, Matc, MainMatc, ProfileContainer, FotoPequena } from './components/styled';
 import Like from './img/Like.png'
 import dislike from './img/dislike.png'
 
@@ -12,7 +11,7 @@ function App() {
 
   const [person, setPerson] = useState([])
   const [match, setMatch] = useState([])
-
+  const [pagina, setpagina] = useState("")
 
   const Atualiza = () => {
 
@@ -24,33 +23,56 @@ function App() {
     setPerson(data)
   }
 
-  useEffect(() => getMatchs(Matchs), [])
+  useEffect(() => getMatchs(Matchs), [pagina])
 
   const Matchs = (data) => {
+
     setMatch(data)
   }
-  console.log(person)
 
+  
 
   return (
 
     <div className="App">
       <header className="App-header">
-        <MainContainer>
-          <ContainerFoto>
-            {person.name}
-            <Foto><img src={person.photo} ></img></Foto>
-            {person.bio}
-          </ContainerFoto>
+        <ContainerBotoes>
+          <div onClick={() => setpagina('Principal')} >Encontrar Match</div>
+          <div onClick={() => setpagina("")}>Matchs selecionados</div>
+        </ContainerBotoes>
+        {pagina === 'Principal' ? (<>
+          <MainContainer>
+            <ContainerFoto>
+              {person.name}
+              <ProfileContainer>
+                <Foto><img src={person.photo} ></img></Foto>
+              </ProfileContainer>
+
+              {person.bio}
+            </ContainerFoto>
+
+            <ContainerImgs>
+              <img onClick={() => {choiceMatch(person.id) 
+                return Atualiza()}} src={Like} ></img>
+              <img onClick={() => Atualiza()} src={dislike} ></img>
+            </ContainerImgs>
+          </MainContainer>
+        </>) : (<MainMatc>
+         
+            {match.map(itens => {
+              return (<>
+                <Matc><FotoPequena><img src={itens.photo} /></FotoPequena>{itens.name}</Matc>
+              </>
+              )
+            })}
+
+         
+        </MainMatc>)}
 
 
-          <ContainerImgs>
-            <img src={Like} ></img>
-            <img onClick={() => Atualiza()} src={dislike} ></img>
-          </ContainerImgs>
 
-        </MainContainer>
       </header>
+      <button onClick={() => clear()} >Limpar</button>
     </div>
   );
 }
