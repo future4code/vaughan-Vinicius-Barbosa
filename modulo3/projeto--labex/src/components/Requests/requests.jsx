@@ -11,3 +11,10 @@ export const TravelsList = (state) => {
     })
 }
 
+export const sendCandidate = (body, tripId, clear) => {
+  axios.post(`${Url_base}/trips/${tripId}/apply`, body)
+      .then((positive) => {
+          alert("Aplicação enviada com sucesso!")
+      })
+      .catch((err) => console.log(err, 'sdfasdflasdkflsdakflk'))
+}
