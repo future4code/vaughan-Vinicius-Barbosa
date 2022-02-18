@@ -15,6 +15,8 @@ button {
     }
 }
 `
+
+
 export function Homepage() {
     const login = useNavigate()
     const goToLoginPage = () => {
@@ -26,6 +28,11 @@ export function Homepage() {
 
         travels('/Viagens')
     }
+    const logar = useNavigate()
+    const goToAdmHomePage=()=>{
+
+    logar('/AdmHome')
+}
     
     return (
 
@@ -36,7 +43,7 @@ export function Homepage() {
                         HOME
                         <ContainerButton>
                         <button onClick={goToTravelsPage}>Lista de viagens</button>
-                        <button onClick={goToLoginPage}>Area administrativa</button>
+                        <button onClick={ localStorage.getItem('token') === '' ? goToLoginPage : goToAdmHomePage }>Area administrativa</button>
                         </ContainerButton>
 
                     </div>

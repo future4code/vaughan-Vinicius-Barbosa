@@ -1,6 +1,8 @@
 import '../App.css'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { deleteTrip, TravelsList } from './Requests/requests'
 
 const ContainerButton = styled.div`
 button {
@@ -20,33 +22,51 @@ const ContainerListTravels = styled.div`
 display:flex;
 flex-direction: column;
 align-items: center;
-padding: 20px;
 background-color: white;
 width: 80vw;
-height: 200vh;
 `
 
 const CardTravels = styled.div`
 
 margin: 10px;
 width: 90%;
-height: 10%;
+height: 20%;
 background-color: #696969;
 `
 
 export function AdmHomePage() {
 
+    const [trips, setTrips] = useState([])
+    useEffect(() => { TravelsList(travels) }, [trips])
+
+    const travels = (data) => {
+        setTrips(data)
+    }
+    const cards = trips && trips.map((a, b) => {
+        return (
+            <ContainerListTravels key={b}>
+                <CardTravels>
+                    <div>{a.name}</div>
+                    <button onClick={() => deleteTrip(a.id)} >Apagar</button>
+                </CardTravels>
+            </ContainerListTravels>
+        )
+    })
+
+
     const comeBack = useNavigate()
     const goToHomePage=()=>{
-
         comeBack('/')
     }
-//CreateTrip
-
     const Create = useNavigate()
     const goToCreateTrip=()=>{
-
         Create('/CreateTrip')
+    }
+
+    const logout = ()=> {
+        localStorage.setItem('token', '')
+        alert('saindo')
+        goToHomePage()
     }
 
     return(
@@ -58,18 +78,10 @@ export function AdmHomePage() {
                         <ContainerButton>
                         <button onClick={goToHomePage}>Voltar</button>
                         <button onClick={goToCreateTrip}>Criar Viagem</button>
-                        <button onClick={goToHomePage}>Logout</button>
-                        <ContainerListTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                            <CardTravels>Viagens</CardTravels>
-                        </ContainerListTravels>
+                        <button onClick={logout}>Logout</button>
+                        {trips == false ? <div>Carregando...</div> : cards}
                         </ContainerButton>
+                       
                     </div>
                 </header>
             </div>
