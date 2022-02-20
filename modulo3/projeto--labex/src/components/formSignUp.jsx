@@ -60,7 +60,7 @@ export function SignTravel() {
     const [tripId, setTripId] = useState("")
     const [trips, setTrips] = useState([])
     const { form, onChange, clear } = useForm({ 
-        name: "", age: 0 , applicationText: "", profession: "", country: "" })
+        name: "", age: Number , applicationText: "", profession: "", country: "" })
     useEffect(() => { TravelsList(travels) }, [])
 
     const onChangeTrip = (e) => {
@@ -99,6 +99,7 @@ export function SignTravel() {
                                         value={form.name}
                                         name={"name"}
                                         onChange={onChange} ></input>
+                                        Digite sua idade
                                     <input placeholder='Digite sua idade'
                                         type={"number"}
                                         name={"age"}
