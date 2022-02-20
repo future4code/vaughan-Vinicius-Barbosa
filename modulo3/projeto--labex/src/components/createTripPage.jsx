@@ -4,6 +4,7 @@ import '../App.css'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { planets } from './const/const'
+import { useProtectedPage } from './hook/protectPage'
 const ContainerButton = styled.div`
 button {
     border-radius: 10px;
@@ -11,24 +12,16 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
-    
     &:hover{
         background-color:gray;
     }
 }
-
 input {
-
     width: 50vw;
-
 }
-
 `
-
 const Container = styled.div`
-
     margin: 10px;
-
     input {
         border-radius: 10px;
         border: none;
@@ -41,17 +34,13 @@ const Container = styled.div`
         width: 50vw;
     }
 `
-
 export function CreateTrip() {
-
+    useProtectedPage()
     const comeBack = useNavigate()
     const goToAdmHome = () => {
-
         comeBack('/AdmHome')
     }
-
     return (
-
         <>
             <div className="App">
                 <header className="App-header">
@@ -72,12 +61,9 @@ export function CreateTrip() {
                             <button onClick={goToAdmHome}>Voltar</button>
                             <button onClick={() => 'Create'}>Enviar</button>
                         </ContainerButton>
-
                     </div>
                 </header>
             </div>
-
         </>
     )
-
 }

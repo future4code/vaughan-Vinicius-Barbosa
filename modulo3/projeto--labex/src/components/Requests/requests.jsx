@@ -1,7 +1,5 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { Url_base } from './Url_base'
-
 
 export const TravelsList = (state) => {
     axios.get(`${Url_base}/trips`)
@@ -20,10 +18,6 @@ export const sendCandidate = (body, tripId, clear) => {
       })
       .catch((err) => console.log(err, 'sdfasdflasdkflsdakflk'))
 }
-
-
-
-
 
 export const deleteTrip = (id) => {
   const token = localStorage.getItem('token')
@@ -49,4 +43,3 @@ export const postTravel = (body) => {
   })
   .catch((err) => console.log(err.statusText, 'Senha incorreta'))
 }
-

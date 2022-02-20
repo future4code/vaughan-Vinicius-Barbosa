@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { deleteTrip, TravelsList } from './Requests/requests'
+import { useProtectedPage } from './hook/protectPage'
 
 const ContainerButton = styled.div`
 button {
@@ -35,13 +36,12 @@ background-color: #696969;
 `
 
 export function AdmHomePage() {
-
+    
     const [trips, setTrips] = useState([])
+    useProtectedPage()
     useEffect(() => { TravelsList(travels) }, [trips])
-
-    const travels = (data) => {
-        setTrips(data)
-    }
+   
+    const travels = (data) => {setTrips(data)}
     const cards = trips && trips.map((a, b) => {
         return (
             <ContainerListTravels key={b}>
