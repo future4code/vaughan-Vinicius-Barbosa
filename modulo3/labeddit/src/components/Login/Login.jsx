@@ -1,37 +1,15 @@
-import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from "axios";
-import { AppHeader } from './styled';
+import { AppHeader, Container, ContainerButton } from '../styled';
+import { ToSee } from '../Hooks/switcher'
+import { goToCreateAccount, goToFeed } from '../Router/links';
 
-const ContainerButton = styled.div`
-button {
-    border-radius: 10px;
-    margin: 20px 20px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    &:hover{
-        background-color:gray;
-    }  
-}
-`
-const Container = styled.div`
-    margin: 25px;
-    input {
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-    }
-    div {
-        cursor: pointer
-    }
-`
 export default function Login() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [passw, setPassw] = useState("")
-    const [seePass, setSeePass] = useState('password')
-    const [pag, setPag] = useState(false)
+    const [ seePass, switcher ] = ToSee()
     const onChangeMail = (e) => {
         setEmail(e.target.value)
     }
@@ -46,21 +24,6 @@ export default function Login() {
             })
             .catch((err) => alert(err.statusText, 'Senha incorreta'))
     }
-    const Create = useNavigate()
-    const goToCreatePage = () => {
-        Create('/CreateAccount')
-    }
-    const logar = useNavigate()
-    const goToFeed = () => {
-        logar('/Feed')
-    }
-    const switcher = () => {
-        if (seePass == 'password') {
-            setSeePass('text')
-        } else {
-            setSeePass('password')
-        }
-    }
     return (
         <AppHeader>
             <div>
@@ -69,8 +32,8 @@ export default function Login() {
                     <Container><input onChange={onChangeMail} type={"email"} placeholder='Digite seu email' ></input></Container>
                     <Container><input onChange={onChangePassw} type={seePass} placeholder='Digite sua senha' ></input>
                     <div onClick={switcher}>ver senha</div></Container>
-                    <button onClick={goToFeed}>Logar</button>
-                    <button onClick={goToCreatePage}>Criar conta</button>
+                    <button onClick={()=> goToFeed(navigate)}>Logar</button>
+                    <button onClick={()=> goToCreateAccount(navigate)}>Criar conta</button>
                 </ContainerButton>
             </div>
         </AppHeader>

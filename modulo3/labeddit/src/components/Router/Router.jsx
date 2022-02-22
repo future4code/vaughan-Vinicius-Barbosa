@@ -1,8 +1,9 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import CommentFeed from './components/CommentFeed';
-import CreateLogin from './components/CreateLogin';
-import Feed from './components/Feed';
-import Login from './components/Login';
+import CreateLogin from '../CreateLogin/CreateLogin';
+import Feed from '../Feed/Feed';
+import Login from '../Login/Login';
+import CommentFeed from '../CommentFeed/CommentFeed';
+
 
 
 export const Router = () => {

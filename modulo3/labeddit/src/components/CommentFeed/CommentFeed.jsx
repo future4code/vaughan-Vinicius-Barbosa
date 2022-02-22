@@ -5,7 +5,7 @@ export default function CommentFeed() {
 
    return (
 
-      <div>COMENTARIOS</div>
+      <div>COMENTARIOS DO POST SELECIONADO</div>
 
    )
 

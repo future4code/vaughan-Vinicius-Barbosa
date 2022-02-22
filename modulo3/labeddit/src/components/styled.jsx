@@ -13,7 +13,28 @@ export const AppHeader = styled.div`
    justify-content: center;
    font-size: calc(10px + 2vmin);
    color: white;
- 
-
-
+   
+`
+export const ContainerButton = styled.div`
+button {
+    border-radius: 10px;
+    margin: 20px 20px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background-color:gray;
+    }  
+}
+`
+export const Container = styled.div`
+    margin: 25px;
+    input {
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+    }
+    div {
+        cursor: pointer
+    }
 `
