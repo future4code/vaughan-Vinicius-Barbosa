@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const MainHeader = styled.header`
+background-color: #b0bfc0;
+`
+export const ContainerDiv = styled.div`
+display: flex;
+   justify-content: space-around;
+   padding: 10px;
+   button{
+      width: 10%;
+      height: 100%;
+      background-color: #8ba0a7;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      &:hover{
+      background-color: gray;
+}
+      &:active{
+      background-color: #464646;
+}
+   }
+`
 export const CardPost = styled.div`
 display:flex;
 background-color: #d6d6d6;

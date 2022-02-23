@@ -25,11 +25,21 @@ button {
         background-color:gray;
     }  
 }
+
+input {
+    text-align: center;
+    width: 25vw;
+    height: 30px;
+    outline: 0;
+    font-size: 1.9vw;
+    font-weight: 100;
+}
+
 `
 export const Container = styled.div`
     margin: 25px;
     input {
-        border-radius: 10px;
+        border-radius: 30px;
         border: none;
         padding: 5px;
     }
