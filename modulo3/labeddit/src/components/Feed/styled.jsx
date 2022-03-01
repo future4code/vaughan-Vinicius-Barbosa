@@ -168,5 +168,24 @@ export const Share = styled.img`
 
 `
 
+export const NavPages = styled.div`
 
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #b0bfc0;
+text-align: center;
+height: 50px;
+img {
+
+      margin: 5px 20px;
+}
+` 
+
+export const Footer = styled.div`
+
+background-color: #b0bfc0;
+text-align: center;
+height: 50px;
+`
 
