@@ -62,8 +62,31 @@ background-color: #c7c8c8;
 img{
    width: 80%;
    height: 20%;
+   border-radius: 20px;
+   cursor: pointer;
+   &:hover{
+      background-color: gray;
+      }
+   &:active{
+      background-color: #464646;
 }
+
+}
+
 `
+export const UpperBarComment = styled.div`
+display:flex;
+justify-content: space-around;
+align-content: center;
+align-items: center;
+width: 95%;
+height: 12%;
+padding: -5px;
+margin: 10px;
+border-radius: 10px;
+background-color: #c7c8c8;
+`
+
 export const UpperBar = styled.div`
 display:flex;
 justify-content: space-around;
@@ -95,6 +118,24 @@ margin: 10px;
 color: black;
 font-weight:500;
 border-radius: 10px;
+font-size: 1.9vw;
+
+input {
+      margin: 10px 0px;
+      padding: 5px;
+      border-radius: 10px;
+      outline: 0;
+      border: none;
+}
+
+textarea {
+      width: 100%;
+      min-width: 100%;
+      max-width: 90%;
+      border-radius: 10px;
+      border: none;
+      outline: 0;
+}
 `
 export const FooterBar = styled.div`
 border-radius: 10px;
@@ -111,6 +152,7 @@ margin: 10px;
 background-color: #8ba0a7;
 border-radius: 10px;
 border: none;
+font-size: 1.2vw;
 &:hover{
       background-color: gray;
 }
