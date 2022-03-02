@@ -14,12 +14,12 @@ export const useGetPosts = () => {
 
    const nextPage = () => {
 
-      setPage(num + 1)
+      setPage(page + 1)
 
    }
    const comeBack = () => {
-      if(num > 0) {
-         setPage(num - 1)
+      if(page > 1) {
+         setPage(page - 1)
       }
    }
 
@@ -33,6 +33,6 @@ export const useGetPosts = () => {
          })
          .catch((err) => setError(err))
    }
-   return [data, error, GetPosts, setPage, page ]
+   return [data, error, GetPosts, setPage, page, nextPage, comeBack ]
 }
 

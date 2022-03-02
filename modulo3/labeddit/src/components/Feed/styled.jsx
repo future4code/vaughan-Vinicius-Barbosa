@@ -179,7 +179,17 @@ height: 50px;
 img {
 
       margin: 5px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+   &:hover{
+      background-color: gray;
+      }
+   &:active{
+      background-color: #464646;
 }
+
+}
+
 ` 
 
 export const Footer = styled.div`

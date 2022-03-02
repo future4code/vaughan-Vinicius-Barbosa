@@ -12,11 +12,10 @@ import { goToFeed, goToLogin } from "../Router/links";
 import { useGetPosts } from "../Hooks/requestGetPosts";
 import { useGetComments } from "../Hooks/requestGetComments";
 import { useSendpost } from "../Hooks/sendState";
-import { useEffect, useState } from "react";
 
 export default function Feed() {
    const [data2, error2, GetComments] = useGetComments()
-   const [data, error, GetPosts, setPage, page] = useGetPosts()
+   const [data, error, GetPosts, setPage, page, nextPage, comeBack] = useGetPosts()
    const navigate = useNavigate()
    const [onChangeTitle, onChangeBody, title, body, SendParanaue] = useSendpost()
 
@@ -32,8 +31,6 @@ export default function Feed() {
       document.location.reload(true)
    }
 
-   //${BASE_URL}/posts?page=${currentPage}&size=10
-   console.log(num)
    const teste = data.data
    const itens = teste && teste.map((x, y) => {
       const formattedTime = x.createdAt.slice(11, 16)
@@ -85,17 +82,14 @@ export default function Feed() {
                      </FooterBar>
                   </Container>
                </CardPost>
-               <SendComment onClick={''} >Comentarios</SendComment>
+               <SendComment onClick={() => console.log('ff')} >Comentarios</SendComment>
                {itens}
             </AppHeader>
          </MainHeader>
          <NavPages>
-            <img src={ArrowLeft} alt="arrow-left" />
+            <img src={ArrowLeft} alt="arrow-left" onClick={() => comeBack()} />
             {page}
-            <img src={ArrowRight} alt="arrow-left" />
-            <button onClick={() => comeBack()} >voltar</button>
-            <button onClick={() => nextNumber()} >ir</button>
-            
+            <img src={ArrowRight} alt="arrow-left" onClick={() => nextPage()} />
          </NavPages>
          <Footer>Todos os direitos reservados</Footer>
       </>
