@@ -1,16 +1,16 @@
 
-export const goToLogin = (x) => {
-   return x('/')
+export const goToLogin = (navigate) => {
+   navigate('/')
 }
 
-export const goToCreateAccount = (x) => {
-   return x('/CreateAccount')
+export const goToCreateAccount = (navigate) => {
+   navigate('/CreateAccount')
 }
 
-export const goToFeed = (x) => {
-    x('/Feed')
+export const goToFeed = (navigate) => {
+   navigate('/Feed')
 }
 
-export const goToCommentsPost = (x) => {
-   x('/Comments')
+export const goToCommentsPost = (navigate) => {
+   navigate(`/Comments`)
 }

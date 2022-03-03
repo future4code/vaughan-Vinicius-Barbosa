@@ -10,17 +10,18 @@ import { useProtectedPage } from "../Hooks/protectPage";
 import { useNavigate } from "react-router-dom";
 import { goToLogin, goToCommentsPost } from "../Router/links";
 import { useGetPosts } from "../Hooks/requestGetPosts";
-import { useShareGetComment } from "../Hooks/requestGetComments";
+import { UseShareGetComment } from "../Hooks/requestGetComments";
 import { useSendpost } from "../Hooks/sendState";
 
-export default function Feed(parameter) {
-   const [data2, error2, GetComments, share, setShare, shareComment] = useShareGetComment()
+export default function Feed(props) {
+   const [data2, error2, GetComments, comment] = UseShareGetComment()
    const [data, error, GetPosts, setPage, page, nextPage, comeBack] = useGetPosts()
    const navigate = useNavigate()
    const [onChangeTitle, onChangeBody, title, body, SendParanaue] = useSendpost()
    useProtectedPage()
    const logout = () => {
       localStorage.removeItem('token')
+      localStorage.removeItem('post')
       alert('saindo')
       goToLogin(navigate)
    }
@@ -31,6 +32,9 @@ export default function Feed(parameter) {
 
    const shareAndSwitch = (x) => {
       
+      const iten = JSON.stringify(x)
+      localStorage.setItem('post', iten)
+      goToCommentsPost(navigate)
    }
 
 

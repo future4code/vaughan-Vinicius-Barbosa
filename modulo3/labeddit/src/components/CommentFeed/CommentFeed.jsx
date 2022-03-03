@@ -1,28 +1,59 @@
-
 import { ContainerDiv, Data, Footer, FooterBar, MainHeader, SendComment} from "../Feed/styled"
 import { AppHeader } from "../styled"
 import { CardPostComments, ContainerComments, LeftBarComments, ToCommentComments, UpperBarComments } from "./styled"
 import SetaCima from '../Assets/SetaCima.png'
 import setaBaixo from '../Assets/setaBaixo.png'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { goToFeed } from "../Router/links"
-import { useShareGetComment } from "../Hooks/requestGetComments"
-import { useEffect } from "react"
+import { UseShareGetComment } from "../Hooks/requestGetComments"
+import { useEffect, useState } from "react"
+import { useSendpost } from "../Hooks/sendState"
 
-export default function CommentFeed(parameter) {
-
+export default function CommentFeed() {
+   const [onChangeTitle, onChangeBody, title, body, SendParanaue] = useSendpost()
+   const [data, error, GetComments, post, setPost ] = UseShareGetComment()
    const navigate = useNavigate()
-   const [data, error, GetComments ] = useShareGetComment()
-   const [share, setShare] = useState({});
-   
-   const shareComment = () => {
-
-      setShare(parameter)
-      
+   const getPost = () => {
+      const iten = localStorage.getItem('post')
+      const post1 = JSON.parse(iten)
+      setPost(post1)
+      GetComments(post1.id)   
    }
 
-   useEffect(()=> {shareComment()},[] )
-
+   useEffect(()=>{
+      getPost()
+     
+   
+   },[])
+ 
+   const teste = data.data
+   const itens = teste && teste.map((x, y) => {
+      const formattedTime = x.createdAt.slice(11, 16)
+      const formattedDate = x.createdAt.slice(0, 10)
+      return (
+         <CardPostComments key={y}>
+            <LeftBarComments>
+               <img src={SetaCima}></img>
+               {x.voteSum === null ? "0" : x.voteSum}
+               <img src={setaBaixo}></img>
+            </LeftBarComments>
+            <ContainerComments>
+               <UpperBarComments>
+                  <img src={'user'} ></img>{x.username}
+                  <div>Acessar post</div>
+               </UpperBarComments>
+               <i>{x.title}</i>
+               <ToCommentComments>
+                  {x.body}
+               </ToCommentComments>
+               <FooterBar>
+                  <SendComment onClick={() => console.log('compartilhou')} >COMPARTILHAR</SendComment>
+               </FooterBar>
+               <Data>Postado no dia {formattedDate} as {formattedTime}</Data>
+            </ContainerComments>
+         </CardPostComments>
+      )
+   })
 
 
    return (
@@ -32,32 +63,51 @@ export default function CommentFeed(parameter) {
                Comentarios<button onClick={() => goToFeed(navigate)} >Voltar</button> <button>Logout</button>
             </ContainerDiv>
             <AppHeader>
-               { share == true ? <div>Carregando</div> : <CardPostComments>
+               { post == true ? <div>Carregando</div> : <CardPostComments>
                   <LeftBarComments>
                      <img src={SetaCima}></img>
-                     {share.voteSum}
+                     {post.voteSum}
                      <img src={setaBaixo}></img>
                   </LeftBarComments>
                   <ContainerComments>
 
                      <UpperBarComments>
-                        <img src={'user'} ></img>{share.username}
+                        <img src={'user'} ></img>{post.username}
                         <div>Acessar post</div>
                      </UpperBarComments>
-                     <i>{share.title}</i>
+                     <i>{post.title}</i>
                      <ToCommentComments>
-                        {share.body}
+                        {post.body}
                      </ToCommentComments>
                      <FooterBar>
-                        <SendComment>COMPARTILHAR</SendComment>
                      </FooterBar>
                      <Data>Postado no dia {'formattedDate'} as {'formattedTime'}</Data>
                   </ContainerComments>
                </CardPostComments> }
+               <div>
+               <CardPostComments>
+                  <LeftBarComments>
+                  </LeftBarComments>
+                  <ContainerComments>
+                     <UpperBarComments>
+                        <div>Comentar neste post</div>
+                     </UpperBarComments>
+                     <ToCommentComments>
+                        <input onChange={onChangeTitle} value={title} type="text" placeholder="Digite aqui o titulo" />
+                        <textarea onChange={onChangeBody} value={body} rows={3} placeholder='Digite seu comentario aqui'></textarea>
+                     </ToCommentComments>
+                     <FooterBar>
+                        <SendComment onClick={() => 'sendAndUpdate'} >Enviar</SendComment>
+                     </FooterBar>
+                  </ContainerComments>
+               </CardPostComments>
+
+
+               </div>
                COMENTARIOS!
+               {itens}
             </AppHeader>
          </MainHeader>
-         <button onClick={() => console.log(share)} >share</button>
          <Footer>Todos os direitos reservados</Footer>
       </>
    )

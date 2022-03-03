@@ -3,12 +3,8 @@ import CreateLogin from '../CreateLogin/CreateLogin';
 import Feed from '../Feed/Feed';
 import Login from '../Login/Login';
 import CommentFeed from '../CommentFeed/CommentFeed';
-import { useState } from 'react';
-
-
 
 export const Router = () => {
-
 
    return (
       <BrowserRouter>
