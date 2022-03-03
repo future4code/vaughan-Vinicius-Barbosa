@@ -8,17 +8,16 @@ import user from '../Assets/user.png'
 import share from '../Assets/share.png'
 import { useProtectedPage } from "../Hooks/protectPage";
 import { useNavigate } from "react-router-dom";
-import { goToFeed, goToLogin } from "../Router/links";
+import { goToLogin, goToCommentsPost } from "../Router/links";
 import { useGetPosts } from "../Hooks/requestGetPosts";
-import { useGetComments } from "../Hooks/requestGetComments";
+import { useShareGetComment } from "../Hooks/requestGetComments";
 import { useSendpost } from "../Hooks/sendState";
 
-export default function Feed() {
-   const [data2, error2, GetComments] = useGetComments()
+export default function Feed(parameter) {
+   const [data2, error2, GetComments, share, setShare, shareComment] = useShareGetComment()
    const [data, error, GetPosts, setPage, page, nextPage, comeBack] = useGetPosts()
    const navigate = useNavigate()
    const [onChangeTitle, onChangeBody, title, body, SendParanaue] = useSendpost()
-
    useProtectedPage()
    const logout = () => {
       localStorage.removeItem('token')
@@ -26,10 +25,14 @@ export default function Feed() {
       goToLogin(navigate)
    }
    const sendAndUpdate = () => {
-
       SendParanaue(title, body)
       document.location.reload(true)
    }
+
+   const shareAndSwitch = (x) => {
+      
+   }
+
 
    const teste = data.data
    const itens = teste && teste.map((x, y) => {
@@ -43,7 +46,7 @@ export default function Feed() {
                <img src={setaBaixo}></img>
             </LeftBar>
             <Container>
-               <UpperBar onClick={() => console.log('alsdkfj')}>
+               <UpperBar onClick={() => shareAndSwitch(x)}>
                   <img src={user} ></img>{x.username}
                   <div>Acessar post</div>
                </UpperBar>
@@ -52,8 +55,7 @@ export default function Feed() {
                   {x.body}
                </ToComment>
                <FooterBar>
-                  <SendComment onClick={() => console.log(data)} >COMPARTILHAR</SendComment>
-                  <Share src={share} ></Share>
+                  <SendComment onClick={() => console.log('compartilhou')} >COMPARTILHAR</SendComment>
                </FooterBar>
                <Data>Postado no dia {formattedDate} as {formattedTime}</Data>
             </Container>
@@ -91,7 +93,9 @@ export default function Feed() {
             {page}
             <img src={ArrowRight} alt="arrow-left" onClick={() => nextPage()} />
          </NavPages>
+         <button onClick={() => console.log(share)} >share</button>
          <Footer>Todos os direitos reservados</Footer>
+         
       </>
    )
 }

@@ -3,10 +3,12 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Base_url } from "../url/url"
 
-export const useGetComments = (id) => {
+export const useShareGetComment = (id) => {
 
+   
    const [data, setData] = useState([]);
    const [error, setError] = useState("");
+
 
    const GetComments = (id) => {
 
@@ -19,7 +21,7 @@ export const useGetComments = (id) => {
          })
          .catch((err) => setError(err))
    }
-   return [data, error, GetComments]
+   return [data, error, GetComments ]
 }
 
 

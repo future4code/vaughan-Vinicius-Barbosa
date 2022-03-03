@@ -11,3 +11,6 @@ export const goToFeed = (x) => {
     x('/Feed')
 }
 
+export const goToCommentsPost = (x) => {
+   x('/Comments')
+}

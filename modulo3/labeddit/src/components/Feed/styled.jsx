@@ -38,7 +38,6 @@ box-shadow: 16px 16px 30px 2px #6b6b6b;
 font-weight: 200;
 padding: 10px;
 border-radius: 10px;
-
 `
 export const Container = styled.div`
 display: flex;
