@@ -17,7 +17,6 @@ export const UseShareGetComment = () => {
       axios.get(`${Base_url}/posts/${id}/comments`, auth)
          .then((positive) => {
             setData(positive)
-            console.log('get comments deu certo ', positive)
          })
          .catch((err) => setError(err))
    }

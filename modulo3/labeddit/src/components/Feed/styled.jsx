@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const MainHeader = styled.header`
-background-color: #b0bfc0;
+background-color: #f2f4f5;
 `
 export const ContainerDiv = styled.div`
 display: flex;
+align-items: center;
    justify-content: space-around;
    padding: 10px;
    button{
@@ -22,8 +23,22 @@ display: flex;
 }
    }
 `
-export const Data = styled.div`
 
+export const Icon = styled.div`
+display:flex;
+align-items: center;
+img{
+
+      width: 100%;
+      height: 100%;
+      margin: 10px;
+}
+
+`
+
+export const Data = styled.div`
+display: flex;
+justify-content: space-between;
 font-weight: 300;
 color: #8a8a8a;
 font-size: 1.5vw;
@@ -31,7 +46,7 @@ font-size: 1.5vw;
 
 export const CardPost = styled.div`
 display:flex;
-background-color: #d6d6d6;
+background-color: #e2e2e2;
 width: 60vw;
 margin: 10px;
 box-shadow: 16px 16px 30px 2px #6b6b6b;
@@ -172,7 +187,7 @@ export const NavPages = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #b0bfc0;
+background-color: #f2f4f5;
 text-align: center;
 height: 50px;
 img {
@@ -193,7 +208,7 @@ img {
 
 export const Footer = styled.div`
 
-background-color: #b0bfc0;
+background-color: #f2f4f5;
 text-align: center;
 height: 50px;
 `

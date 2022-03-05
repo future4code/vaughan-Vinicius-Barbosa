@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const AppHeader = styled.div`
 
-   background-color: #b0bfc0;
+   background-color: #DAE0E6;
    min-height: 100vh;
    display: flex;
    flex-direction: column;

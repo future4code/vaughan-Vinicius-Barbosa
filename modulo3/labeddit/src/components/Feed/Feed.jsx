@@ -1,35 +1,41 @@
 import { AppHeader } from "../styled";
-import { CardPost, FooterBar, LeftBar, UpperBar, Container, ToComment, SendComment, Share, MainHeader, ContainerDiv, Data, UpperBarComment, NavPages, Footer } from "./styled";
+import { CardPost, FooterBar, LeftBar, UpperBar, Container, ToComment, SendComment, Share, MainHeader, ContainerDiv, Data, UpperBarComment, NavPages, Footer, Icon } from "./styled";
 import SetaCima from '../Assets/SetaCima.png'
 import setaBaixo from '../Assets/setaBaixo.png'
 import ArrowLeft from '../Assets/ArrowLeft.png'
 import ArrowRight from '../Assets/ArrowRight.png'
 import user from '../Assets/user.png'
-import share from '../Assets/share.png'
 import { useProtectedPage } from "../Hooks/protectPage";
 import { useNavigate } from "react-router-dom";
 import { goToLogin, goToCommentsPost } from "../Router/links";
 import { useGetPosts } from "../Hooks/requestGetPosts";
 import { UseShareGetComment } from "../Hooks/requestGetComments";
 import { useSendpost } from "../Hooks/sendState";
+import { Base_url } from "../url/url";
+import axios from "axios";
+import icon from '../Assets/icon.png'
 
 export default function Feed(props) {
+   
    const [data2, error2, GetComments, comment] = UseShareGetComment()
-   const [data, error, GetPosts, setPage, page, nextPage, comeBack] = useGetPosts()
+   const [data, error, GetPosts, setPage, page, nextPage, comeBack, updatePage ] = useGetPosts()
    const navigate = useNavigate()
    const [onChangeTitle, onChangeBody, title, body, SendParanaue] = useSendpost()
    useProtectedPage()
+
    const logout = () => {
       localStorage.removeItem('token')
       localStorage.removeItem('post')
       alert('saindo')
       goToLogin(navigate)
    }
+   
+   
    const sendAndUpdate = () => {
       SendParanaue(title, body)
       document.location.reload(true)
    }
-
+   
    const shareAndSwitch = (x) => {
       
       const iten = JSON.stringify(x)
@@ -37,6 +43,37 @@ export default function Feed(props) {
       goToCommentsPost(navigate)
    }
 
+   const createPostVote = (idVote, num) => {
+      const body = {
+        direction: num,
+      };
+      const token = localStorage.getItem("token")
+      const auth = {headers: {Authorization: token}}
+
+      axios
+        .post(`${Base_url}/posts/${idVote}/votes`, body, auth)
+        .then((response) => {
+         updatePage()
+          console.log('att pagina' , response);
+        })
+        .catch((error) => {
+          alert(error.response.data.message);
+        });
+    };
+
+    const deletePostVote = (idVote) => {
+       const token = localStorage.getItem("token")
+       const auth = {headers: {Authorization: token}}
+       
+       axios
+        .delete(`${Base_url}/posts/${idVote}/votes`, auth )
+        .then((response) => {
+         console.log('att pagina' , response);
+        })
+        .catch((error) => {
+          alert(error.response.data.message);
+        });
+    };
 
    const teste = data.data
    const itens = teste && teste.map((x, y) => {
@@ -45,9 +82,9 @@ export default function Feed(props) {
       return (
          <CardPost key={y}>
             <LeftBar>
-               <img src={SetaCima}></img>
+               <div onClick={() => createPostVote(x.id, 1)}><img onClick={()=> deletePostVote(x.id)} src={SetaCima}></img></div>
                {x.voteSum === null ? "0" : x.voteSum}
-               <img src={setaBaixo}></img>
+               <div onClick={() => createPostVote(x.id, -1) } ><img onClick={()=> deletePostVote(x.id)} src={setaBaixo}></img></div>
             </LeftBar>
             <Container>
                <UpperBar onClick={() => shareAndSwitch(x)}>
@@ -59,9 +96,9 @@ export default function Feed(props) {
                   {x.body}
                </ToComment>
                <FooterBar>
-                  <SendComment onClick={() => console.log('compartilhou')} >COMPARTILHAR</SendComment>
+                  <SendComment onClick={() => console.log(x.id)} >COMPARTILHAR</SendComment>
                </FooterBar>
-               <Data>Postado no dia {formattedDate} as {formattedTime}</Data>
+               <Data>Postado no dia {formattedDate} as {formattedTime} <div>Numero de comentarios: {x.commentCount === null ? '0' : x.commentCount }</div></Data>
             </Container>
          </CardPost>
       )
@@ -69,7 +106,10 @@ export default function Feed(props) {
    return (
       <>
          <MainHeader>
-            <ContainerDiv>Feed<button onClick={() => logout()} >Logout</button></ContainerDiv>
+            <ContainerDiv><Icon><h2>Feed</h2> <img src={icon} ></img> </Icon>
+            <button onClick={() => logout()} >Logout</button>
+            
+            </ContainerDiv>
             <AppHeader>
                <CardPost>
                   <LeftBar>
@@ -88,7 +128,7 @@ export default function Feed(props) {
                      </FooterBar>
                   </Container>
                </CardPost>
-               <SendComment onClick={() => console.log('ff')} >Comentarios</SendComment>
+               <SendComment>Comentarios</SendComment>
                {itens}
             </AppHeader>
          </MainHeader>
@@ -97,7 +137,6 @@ export default function Feed(props) {
             {page}
             <img src={ArrowRight} alt="arrow-left" onClick={() => nextPage()} />
          </NavPages>
-         <button onClick={() => console.log(share)} >share</button>
          <Footer>Todos os direitos reservados</Footer>
          
       </>

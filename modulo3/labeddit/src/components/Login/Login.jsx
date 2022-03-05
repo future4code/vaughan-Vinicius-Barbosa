@@ -1,13 +1,23 @@
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AppHeader, Container, ContainerButton } from '../styled';
 import { ToSee } from '../Hooks/switcher'
-import { goToCreateAccount } from '../Router/links';
+import { goToCreateAccount, goToFeed } from '../Router/links';
 import { ContainerLogin } from './styled';
 import { RequestLogin } from '../Hooks/requestLogin';
 
 export default function Login() {
     const navigate = useNavigate()
+    const verify = () => {
+        const token = window.localStorage.getItem('token')
+        if (token !== null) {
+            goToFeed(navigate)
+        }
+    }
+    useEffect(()=>{verify()},[])
+    
+
+
     const [ seePass, switcher ] = ToSee()
     const [onChangeMail, onChangePassw, user, passw, Login] = RequestLogin()
     return (
