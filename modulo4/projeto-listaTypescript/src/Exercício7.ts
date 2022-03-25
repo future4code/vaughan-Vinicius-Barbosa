@@ -10,9 +10,8 @@ console.log('Exercicio 7')
 type caract = {
    nome: string,
    quantidade: number,
-   valorUnitario: number | string
+   valorUnitario: any
 }
-
 
 const array:caract[] = [
 	{ nome: "MacMugffin", quantidade: 37, valorUnitario: 51.040},
@@ -25,12 +24,32 @@ const array:caract[] = [
 ]
 
 
-
-const ajustaPreco = (preco :number): string => {
-	const valorAjustado: string = preco.toFixed(2).replace('.', ',')
-	return "R$ "+valorAjustado
-}
-
 //Aproveitando a função já feita, faça uma nova função que receba o array de
 // estoque como parâmetro, use a função ajustaPreco para corrigir os preços 
 // e retorne a lista de estoque ordenada pela quantidade de cada produto. 
+
+const ajustaPreco = (preco :number ): string => {
+   const valorAjustado = preco.toFixed(2).replace('.', ',')
+   return "R$ "+valorAjustado
+}
+
+const fixArray = (x:caract[]) => {
+
+   const ordenar = x.sort((a, b) => {
+      if (a.quantidade< b.quantidade) 
+          return -1;
+      if (a.quantidade>b.quantidade) 
+          return 1;
+      return 0 
+   })
+
+   for(let variavel of ordenar) {
+      variavel.valorUnitario = ajustaPreco(variavel.valorUnitario)
+   }
+
+   return ordenar
+}
+
+console.log(fixArray(array))
+
+
