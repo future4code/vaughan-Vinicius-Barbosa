@@ -1,14 +1,14 @@
 console.log('Exercicio 8')
 
 
-function checaRenovacaoRG_BR(anoNascimento: string, anoEmissao: string) {
+function checaRenovacaoRG_BR(anoNascimento: string, anoEmissao: string):boolean {
 
-   const anoNas = anoNascimento.split('/')
-   const anoEmi = anoEmissao.split('/')
+   const anoNas:string[] = anoNascimento.split('/')
+   const anoEmi:string[] = anoEmissao.split('/')
    const anoAtual: number = new Date().getFullYear()
 
-   let idade = anoAtual - parseInt(anoNas[2])
-   let tempoCarteira = anoAtual - parseInt(anoEmi[2])
+   let idade:number = anoAtual - parseInt(anoNas[2])
+   let tempoCarteira:number = anoAtual - parseInt(anoEmi[2])
 
    if (idade <= 20) {
       return tempoCarteira >= 5 ? true : false
