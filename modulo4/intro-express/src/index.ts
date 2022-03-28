@@ -20,9 +20,6 @@ app.get("/", (req, res) => {
 });
 
 
-
-
-
 // getPostById
 app.get("/posts/:userId", (req, res) => {
    const id = req.params.userId;
@@ -41,41 +38,29 @@ app.get("/posts/:userId", (req, res) => {
 
 
 
-
-/* 
-// getPlaylistTracks
-app.get("/tracks", (req, res) => {
-
-   const playlists = data.map((user) => {
-       return user;
-   }).flat(1);
-
-   const tracks = playlists.map((playlist) => {
-       return playlist
-   }).flat(1);
-
-   res.status(200).send(tracks);
-})
- */
-
-
-
-
-
 // deletePlaylistsByUserId
 
-app.delete("/playlists/:userId", (req, res) => {
-   const userId = req.params.userId;
+app.delete("/posts/:userId/:postId", (req, res) => {
 
- /*   const usersUpdated = users.map((user) => {
-       if (user.id === userId) {
-           return { ...user, playlists: [] }
-       } else {
-           return user
-       }
-   }); */
+   const idUser = req.params.userId;
 
-   res.send(userId);
+   const playlists = data.users.map((user) => {
+       return user.posts
+   });
+
+   const resultPlaylists = playlists.flat(1) // flat(profundidade da busca)
+   // [1,[2,3], 4] -> flat(1) -> [1,2,3,4] 
+
+   const postById = resultPlaylists.filter((x) => x.userId === Number(idUser))
+
+   const id = Number(req.params.postId);
+
+  const postsUpdated = postById.filter((post) => {
+   return post.id !== id
+})
+
+res.status(200).send(postsUpdated);
+
 })
 
 
@@ -93,10 +78,6 @@ app.delete("/tracks/:playlistId", (req, res) => {
 
    res.send(usersUpdated);
 }) */
-
-
-
-
 
 
 
