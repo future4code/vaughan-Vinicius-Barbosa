@@ -1,18 +1,36 @@
-export const data = {
-   
-//Exercício 6
 
-//Crie um array de posts para incrementar a base de dados da nossa API. 
+type dataType =  {
+users: {
+   id: number;
+   name: string;
+   phone: string;
+   email: string;
+   site: string;
+   posts: {
+       id: number;
+       title: string;
+       body: string;
+       userId: number;
+   }[];
+}[];
+}
 
-//Você acha melhor criá-los dentro ou fora do array de usuários? Justifique com comentários no código.
+export const data:dataType = {
 
-//Não se esqueça de fazer a tipagem correta desse array.
+   //Exercício 6
+
+   //Crie um array de posts para incrementar a base de dados da nossa API. 
+
+   //Você acha melhor criá-los dentro ou fora do array de usuários? Justifique com comentários no código.
+
+   //Não se esqueça de fazer a tipagem correta desse array.
 
 
 
-/* 
-Achei mais simples criar na mesma arvore pois e mais facil de ser acessado
-*/
+   /* 
+   Achei mais simples criar na mesma arvore pois e mais facil de ser acessado
+   */
+
    users: [
       {
          id: 1,

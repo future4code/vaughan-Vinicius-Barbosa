@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 // getPostById
 app.get("/posts/:userId", (req, res) => {
-   const id = req.params.userId;
+   const id:string = req.params.userId;
 
    const playlists = data.users.map((user) => {
        return user.posts
