@@ -1,5 +1,18 @@
 export const data = {
    
+//Exercício 6
+
+//Crie um array de posts para incrementar a base de dados da nossa API. 
+
+//Você acha melhor criá-los dentro ou fora do array de usuários? Justifique com comentários no código.
+
+//Não se esqueça de fazer a tipagem correta desse array.
+
+
+
+/* 
+Achei mais simples criar na mesma arvore pois e mais facil de ser acessado
+*/
    users: [
       {
          id: 1,

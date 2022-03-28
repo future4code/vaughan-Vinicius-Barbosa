@@ -23,9 +23,10 @@ app.get("/", (req, res) => {
 
 
 
-// getAllPlaylists
-app.get("/posts", (req, res) => {
-   
+// getPostById
+app.get("/posts/:userId", (req, res) => {
+   const id = req.params.userId;
+
    const playlists = data.users.map((user) => {
        return user.posts
    });
@@ -33,11 +34,9 @@ app.get("/posts", (req, res) => {
    const resultPlaylists = playlists.flat(1) // flat(profundidade da busca)
    // [1,[2,3], 4] -> flat(1) -> [1,2,3,4] 
 
+   const postById = resultPlaylists.filter((x) => x.userId === Number(id))
 
-   
-
-
-   res.status(200).send(resultPlaylists);
+   res.status(200).send(postById);
 });
 
 
