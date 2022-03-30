@@ -37,5 +37,8 @@
         "tarefas",
         "texto",
         "Usuario"
-    ]
+    ],
+    "code-runner.executorMap": {
+        "typescript": "npx ts-node --files"
+    }
 }
