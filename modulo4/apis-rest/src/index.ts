@@ -52,7 +52,7 @@ app.get("/users/typefind", (req: Request, res: Response) => {
 
          throw new Error('type not specified')
       }
-      const filterData = users.filter((x) => x.type.toLowerCase().includes(String(type)
+      const filterData:userType[] = users.filter((x) => x.type.toLowerCase().includes(String(type)
          .toLowerCase()))
       if (filterData.length === 0) {
          throw new Error('error ')
@@ -67,12 +67,12 @@ app.get("/users/typefind", (req: Request, res: Response) => {
 app.get("/users/find", (req: Request, res: Response) => {
 
    try {
-      const name = req.query.name as string
+      const name:string = req.query.name as string
       if (!name) {
 
          throw new Error('name not specified')
       }
-      const filterData = users.filter((x) => x.name.toLowerCase().includes(String(name)
+      const filterData:userType[] = users.filter((x) => x.name.toLowerCase().includes(String(name)
          .toLowerCase()))
       if (filterData.length === 0) {
          throw new Error('error ')
@@ -83,7 +83,7 @@ app.get("/users/find", (req: Request, res: Response) => {
    }
 });
 
-app.post("/user/add", (req, res) => {
+app.post("/user/add", (req: Request, res: Response) => {
 
     try {
       
@@ -105,12 +105,12 @@ app.post("/user/add", (req, res) => {
 
       if(type === 'NORMAL') {
          
-         let newObj = {...body1, type:userTypeKey.NORMAL }
+         let newObj:userType = {...body1, type:userTypeKey.NORMAL }
 
          users.push(newObj)
       }  
       if(type === 'ADMIN') {
-         let newObj = {...body1, type:userTypeKey.ADMIN }
+         let newObj:userType = {...body1, type:userTypeKey.ADMIN }
 
          users.push(newObj)
 
