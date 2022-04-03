@@ -1,7 +1,23 @@
 
+export type datatype = {
 
+    id: number;
+    conta: {
+        saldo: number;
+        extrato: {
+            id: number;
+            valor: number;
+            data: string;
+            descriçao: string;
+        }[];
+    };
+    idade: number;
+    nome: string;
+    cpf: number;
+    dataNascimento: string;
+}
 
-export const dataBase = [
+export const dataBase:datatype[] = [
 
     {
         id: 1113456345,

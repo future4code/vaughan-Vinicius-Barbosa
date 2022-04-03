@@ -38,7 +38,9 @@ app.post("/", (req: Request, res: Response) => {
         if (!idade || !nome || !cpf || !dataNascimento) {
             throw new Error('any field not specified')
         }
+
         const newAccount = {
+            
             id: Date.now(),
             conta: {
                 saldo: 0,
@@ -291,8 +293,9 @@ app.put("/account/transfer", (req: Request, res: Response) => {
             throw new Error('cpfRecept not found')
         }
 
+        type paytype = {id: number, data: string, valor?: number, descriçao?: string}
 
-        let pay = {
+        let pay:paytype = {
             id: Date.now(),
             data: dateNowBR
         }
