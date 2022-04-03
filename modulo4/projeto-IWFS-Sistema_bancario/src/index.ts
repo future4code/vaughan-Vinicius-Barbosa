@@ -56,6 +56,9 @@ app.post("/", (req: Request, res: Response) => {
 
             throw new Error('idade type not valid')
         }
+        if(idade < 18) {
+            throw new Error('age not valid')
+        }
         if (typeof nome !== 'string') {
             throw new Error('name type not valid')
         }
@@ -230,6 +233,7 @@ app.post("/account/pay", (req: Request, res: Response) => {
                 }
 
                 i.conta.saldo -= pay.valor
+                pay.valor = -req.body.value
                 i.conta.extrato.push(pay)
             }
         }
