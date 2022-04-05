@@ -21,6 +21,12 @@ R-C describe actor mostrou as informaçoes sobre as chaves da tabela de atores
 
    E erro - R Valor incorreto no campo birth_date
 
+3 - A - SELECT * from Actor WHERE gender = "female"
+   B - SELECT * from Actor WHERE name = "Tony Ramos"
+   C - SELECT * from Actor WHERE gender = "invalid" = Nao encontrou nenhuma linha com esse valor
+
+   
+
 
    
 
