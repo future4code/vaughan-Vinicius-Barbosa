@@ -1,20 +1,16 @@
 import { Request, Response } from 'express'; 
 import { connection } from "../data/connection"
 
-export const getAllUsers = async (req: Request,res: Response) => {
+export const getUserByType = async (req: Request,res: Response) => {
 
-   const {nome} = req.query
+   const {type} = req.params
 
    try {
       
       const data = await connection('aula48_exercicio')
       .select("*")
-      .where('name','like',`%${nome}%`)
+      .where('type','=',`${type}`)
 
-      if(!nome){
-         throw new Error(`Nao foi possivel achar o nome`)
-      }
-      
       res.status(200).send(data);
    } catch (err: any) {
 
@@ -22,4 +18,5 @@ export const getAllUsers = async (req: Request,res: Response) => {
    }
 
 }
+
 
