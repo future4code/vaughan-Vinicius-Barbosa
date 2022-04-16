@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'; 
 import { connection } from "../data/connection"
 
-export const getAllUsers = async (req: Request,res: Response) => {
+export const getAllProducts = async (req: Request,res: Response) => {
 
    try {
 
-      const data = await connection('lab_ecommerce_users')
+      const data = await connection('lab_ecommerce_products')
 
       res.status(200).send(data);
    } catch (err: any) {
