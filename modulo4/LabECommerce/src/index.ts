@@ -12,3 +12,5 @@ app.get("/products", getAllProducts)
 app.post("/products", postProduct)
 app.post('/purchases', postPurchase)
 app.get("/users/:userId/purchases",getUserPurchases)
+
+/* #### */
