@@ -1,39 +1,15 @@
-import express,{ Request, Response } from 'express'; 
-import cors from 'cors';
-import { AddressInfo } from 'net'
+import { app } from "./app";
+import { getAll } from "./endpoints/getAll";
+import { getTasks } from "./endpoints/getTasks";
+import { getUser } from "./endpoints/getUser";
+import { postTask } from "./endpoints/postTask";
+import { postUser } from "./endpoints/postUser";
+import { updateUser } from "./endpoints/updateUser";
 
-const app = express();
+app.get("/", getAll)
+app.get("/user/:id", getUser)
+app.post("/user/", postUser)
+app.put("/user/edit/:id" , updateUser )
+app.post("/user/", postTask)
+app.get("/task/:id", getTasks)
 
-app.use(express.json());
-app.use(cors());
-
-// ENDPOINTS
-
-app.get("/playlists", (req: Request, res: Response) => {
-
-
-   try {
-
-      const resultPlaylists = "começo"
-
-
-      res.status(200).send(resultPlaylists);
-   } catch (err: any) {
-
-      res.status(400).send(err.message)
-   }
-});
-
-
-
-const server = app.listen(process.env.PORT || 3001, () => {
-
-   if (server) {
-      const address = server.address() as AddressInfo
-      console.log(`Running in : http://localhost:${address.port}`)
-
-   } else {
-      console.error("failure upon starting server !")
-   }
-
-});
