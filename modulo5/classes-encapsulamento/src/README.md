@@ -25,7 +25,7 @@ class Transaction2 {
    private value: number;
    private date: string
 
-   // SO ACEITÁVEL PONTO E VIRGULA ACIMA
+   
 
    constructor(date: string, value: number, description: string) {
       this.date = date;
