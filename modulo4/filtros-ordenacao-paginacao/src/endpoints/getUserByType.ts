@@ -3,7 +3,7 @@ import { connection } from "../data/connection"
 
 export const getUserByType = async (req: Request,res: Response) => {
 
-   const {type} = req.params
+   const {type} = req.query
 
    try {
       
