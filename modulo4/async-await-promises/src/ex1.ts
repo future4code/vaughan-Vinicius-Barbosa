@@ -16,4 +16,4 @@ async function getSubscribers(): Promise<any[]> {
    return response.data;
  };
 
-getSubscribers()
+getSubscribers().then(res => console.log(res))
