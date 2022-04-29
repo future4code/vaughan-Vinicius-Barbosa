@@ -14,11 +14,12 @@ descricao TEXT NOT NULL,
 data DATE NOT NULL,
 id_user VARCHAR(255),
 FOREIGN KEY (id_user) REFERENCES cookenu_users(id)
+ON DELETE CASCADE
+ON UPDATE RESTRICT
 );
 CREATE TABLE cookenu_seguidores(
 id VARCHAR(255) primary key unique,
 id_user VARCHAR(255) ,
-FOREIGN KEY (id_user) REFERENCES cookenu_users(id),
-id_segue VARCHAR(255) ,
-FOREIGN KEY (id_segue) REFERENCES cookenu_users(id)
+FOREIGN KEY (id_user) REFERENCES cookenu_users(id)
+ON DELETE CASCADE
 );

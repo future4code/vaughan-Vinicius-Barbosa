@@ -29,5 +29,6 @@ export class Authenticator {
 }
 type authenticationData = {
     id: string;
+    role?: string
 }
 
