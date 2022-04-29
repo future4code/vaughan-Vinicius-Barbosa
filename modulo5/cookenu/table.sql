@@ -17,8 +17,8 @@ FOREIGN KEY (id_user) REFERENCES cookenu_users(id)
 );
 CREATE TABLE cookenu_seguidores(
 id VARCHAR(255) primary key unique,
-id_user VARCHAR(255) unique,
+id_user VARCHAR(255) ,
 FOREIGN KEY (id_user) REFERENCES cookenu_users(id),
-id_segue VARCHAR(255) unique,
+id_segue VARCHAR(255) ,
 FOREIGN KEY (id_segue) REFERENCES cookenu_users(id)
 );
