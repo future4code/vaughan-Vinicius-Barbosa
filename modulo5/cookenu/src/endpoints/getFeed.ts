@@ -35,7 +35,7 @@ export const getFeed = async (req: Request, res: Response) => {
       }
       const arrays = feed.flat(1)
 
-      res.status(200).send({ receitas: arrays, ids: data  });
+      res.status(200).send({ feed: arrays });
    } catch (err: any) {
       res.status(400).send(err.message)
    }

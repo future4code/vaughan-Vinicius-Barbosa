@@ -14,6 +14,7 @@ import { postUser } from "./endpoints/postUser";
 import { putAlteraReceita } from "./endpoints/putAlterarReceita";
 import { postSwitchPass } from "./endpoints/postSwitchPass";
 import { getFeed } from "./endpoints/getFeed";
+import { getAllUsers } from "./endpoints/getAllUsers";
 
 app.post("/signup", postUser)
 app.post("/login", postLogin)
@@ -30,3 +31,4 @@ app.post("/user/delete", postDeleteUser)
 app.post("/send-mail", sendMail)
 app.post("/replace-password" , postSwitchPass)
 app.get("/feed" , getFeed)
+app.get("/all-users" , getAllUsers)
