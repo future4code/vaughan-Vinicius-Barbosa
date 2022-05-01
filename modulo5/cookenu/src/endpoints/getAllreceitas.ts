@@ -15,7 +15,7 @@ export const getAllreceitas = async (req: Request, res: Response) => {
       }
       const data = await connection("cookenu_receitas")
       .where('id_user', verify.id)
-      .select('id', 'title', 'descricao', 'data')
+      .select('id', 'title', 'descricao', 'data', 'id')
 
       if (data.length === 0) {
          throw new Error("usuario nao possui receitas ainda");
