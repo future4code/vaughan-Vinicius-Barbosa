@@ -16,10 +16,15 @@ export class UserDataBase extends BaseDataBase {
       .insert(obj)
       return "User criado"
    }
-   deletUserDATA = async(id:string) => {
+   deletUserDATA = async (id:string) => {
       await this.connection("users")
       .where('id', id)
       .del()
       return "User deletado"
    }
+   insertPostDATA = async (obj:object) => {
+      await this.connection("users_posts")
+       .insert(obj)
+       return "Post criado"
+    }
 }
