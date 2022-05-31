@@ -1,0 +1,22 @@
+{
+  "name": "testes_unitarios_mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "tsc && ./build/index.js",
+    "dev": "ts-node-dev ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/mocha": "^9.1.1",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  }
+}
